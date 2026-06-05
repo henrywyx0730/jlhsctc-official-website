@@ -1,65 +1,264 @@
-import Image from "next/image";
+const archiveCategories = [
+  {
+    title: "Events",
+    description: "Public events, club activities, and major moments will be archived here.",
+    status: "Content pending",
+  },
+  {
+    title: "Articles",
+    description: "Student essays, reflections, publications, and written pieces will be collected here.",
+    status: "Content pending",
+  },
+  {
+    title: "Projects",
+    description: "Club projects, research initiatives, and collaborative work will be displayed here.",
+    status: "Content pending",
+  },
+  {
+    title: "Media",
+    description: "Photos, videos, posters, and visual records will be organized here.",
+    status: "Content pending",
+  },
+  {
+    title: "Documents",
+    description: "PDFs, forms, records, and official club materials will be stored here.",
+    status: "Content pending",
+  },
+];
+
+const timelineItems = [
+  {
+    year: "Year",
+    title: "Milestone title pending",
+    description: "A short description of this stage will be added after the club materials are collected.",
+  },
+  {
+    year: "Year",
+    title: "Milestone title pending",
+    description: "A short description of this stage will be added after the club materials are collected.",
+  },
+  {
+    year: "Year",
+    title: "Milestone title pending",
+    description: "A short description of this stage will be added after the club materials are collected.",
+  },
+];
+
+const members = [
+  {
+    name: "Member Name",
+    role: "Role pending",
+    description: "Short biography or contribution summary will be added later.",
+  },
+  {
+    name: "Member Name",
+    role: "Role pending",
+    description: "Short biography or contribution summary will be added later.",
+  },
+  {
+    name: "Member Name",
+    role: "Role pending",
+    description: "Short biography or contribution summary will be added later.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
+    <main className="min-h-screen bg-[#f7f3ea] text-[#17130d]">
+      <header className="sticky top-0 z-50 border-b border-black/10 bg-[#f7f3ea]/90 backdrop-blur">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <a href="#home" className="text-sm font-semibold tracking-[0.25em] uppercase">
+            CTC Archive
+          </a>
+          <div className="hidden gap-6 text-sm text-black/65 md:flex">
+            <a href="#about" className="hover:text-black">About</a>
+            <a href="#archive" className="hover:text-black">Archive</a>
+            <a href="#timeline" className="hover:text-black">Timeline</a>
+            <a href="#members" className="hover:text-black">Members</a>
+            <a href="#contribute" className="hover:text-black">Contribute</a>
+          </div>
+        </nav>
+      </header>
+
+      <section id="home" className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+        <div>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-black/55">
+            Critical Thinking Club
+          </p>
+          <h1 className="text-5xl font-semibold tracking-tight md:text-7xl">
+            Online Archive
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-black/65">
+            A digital archive for preserving the club&apos;s activities, writings,
+            projects, media, and collective memory.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#archive"
+              className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition hover:bg-black/80"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              View archive structure
+            </a>
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#contribute"
+              className="rounded-full border border-black/20 px-6 py-3 text-sm font-medium transition hover:border-black"
             >
-              Learning
-            </a>{" "}
-            center.
+              Submit materials
+            </a>
+          </div>
+        </div>
+
+        <div className="rounded-[2rem] border border-black/10 bg-white/45 p-6 shadow-sm">
+          <div className="aspect-[4/3] rounded-[1.5rem] border border-dashed border-black/20 bg-[#eee6d8] p-6">
+            <div className="flex h-full items-center justify-center text-center">
+              <div>
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
+                  Cover image pending
+                </p>
+                <p className="mt-3 text-sm leading-6 text-black/55">
+                  Club photo, event poster, or archive visual can be placed here.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="border-y border-black/10 bg-white/35">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
+            About
+          </p>
+          <div className="mt-6 grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
+            <h2 className="text-3xl font-semibold md:text-5xl">
+              About the Critical Thinking Club
+            </h2>
+            <div className="space-y-4 text-base leading-8 text-black/65">
+              <p>
+                This section is reserved for the club&apos;s official introduction.
+                The final text can include the club&apos;s mission, founding story,
+                values, and major areas of activity.
+              </p>
+              <p>
+                Content will be added after the English drafts and supporting
+                materials are collected.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="archive" className="mx-auto max-w-6xl px-6 py-20">
+        <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
+              Archive
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
+              Material categories
+            </h2>
+          </div>
+          <p className="max-w-xl text-sm leading-6 text-black/55">
+            The structure is ready. Specific entries, photos, documents, and
+            written descriptions can be added later.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {archiveCategories.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-3xl border border-black/10 bg-white/55 p-6 shadow-sm transition hover:-translate-y-1 hover:bg-white"
+            >
+              <div className="mb-8 inline-flex rounded-full border border-black/10 px-3 py-1 text-xs uppercase tracking-[0.15em] text-black/45">
+                {item.status}
+              </div>
+              <h3 className="text-2xl font-semibold">{item.title}</h3>
+              <p className="mt-4 text-sm leading-7 text-black/60">
+                {item.description}
+              </p>
+            </article>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section id="timeline" className="border-y border-black/10 bg-[#17130d] text-white">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-white/45">
+            Timeline
+          </p>
+          <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
+            Club history
+          </h2>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {timelineItems.map((item, index) => (
+              <article key={index} className="rounded-3xl border border-white/10 bg-white/5 p-6">
+                <p className="text-sm uppercase tracking-[0.2em] text-white/40">
+                  {item.year}
+                </p>
+                <h3 className="mt-5 text-xl font-semibold">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-white/60">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="members" className="mx-auto max-w-6xl px-6 py-20">
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
+          Members
+        </p>
+        <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
+          Team and contributors
+        </h2>
+
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {members.map((member, index) => (
+            <article key={index} className="rounded-3xl border border-black/10 bg-white/55 p-6">
+              <div className="mb-5 aspect-square rounded-2xl border border-dashed border-black/15 bg-[#eee6d8]" />
+              <h3 className="text-xl font-semibold">{member.name}</h3>
+              <p className="mt-1 text-sm text-black/45">{member.role}</p>
+              <p className="mt-4 text-sm leading-7 text-black/60">
+                {member.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="contribute" className="bg-white/40">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="rounded-[2rem] border border-black/10 bg-[#f7f3ea] p-8 md:p-12">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
+              Contribute
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
+              Materials to collect
+            </h2>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-black/65">
+              Future contributors can provide English drafts, event summaries,
+              photos, videos, posters, PDFs, and other records. Each archive item
+              should ideally include a title, date, category, short description,
+              full text, images, related files, and contributor name.
+            </p>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-4">
+              {["English drafts", "Photos", "Documents", "Media files"].map((item) => (
+                <div key={item} className="rounded-2xl border border-black/10 bg-white/60 p-5 text-sm font-medium">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-black/10 px-6 py-8 text-center text-sm text-black/45">
+        Critical Thinking Club Online Archive · Content pending
+      </footer>
+    </main>
   );
 }
