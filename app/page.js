@@ -67,8 +67,15 @@ export default function Home() {
     <main className="min-h-screen bg-[#f7f3ea] text-[#17130d]">
       <header className="sticky top-0 z-50 border-b border-black/10 bg-[#f7f3ea]/90 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#home" className="text-sm font-semibold tracking-[0.25em] uppercase">
-            CTC Archive
+          <a href="#home" className="flex items-center gap-3">
+            <img
+              src="/images/ctc-logo.png"
+              alt="Critical Thinking Club logo"
+              className="h-10 w-10 rounded-full object-contain bg-white p-1"
+            />
+            <span className="text-sm font-semibold tracking-[0.25em] uppercase">
+              CTC
+            </span>
           </a>
           <div className="hidden gap-6 text-sm text-black/65 md:flex">
             <a href="#about" className="hover:text-black">About</a>
@@ -83,10 +90,10 @@ export default function Home() {
       <section id="home" className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-[1.1fr_0.9fr] md:items-center">
         <div>
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-black/55">
-            Critical Thinking Club
+            Official Website
           </p>
           <h1 className="text-5xl font-semibold tracking-tight md:text-7xl">
-            Online Archive
+            Critical Thinking Club
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-black/65">
             A digital archive for preserving the club&apos;s activities, writings,
@@ -109,17 +116,12 @@ export default function Home() {
         </div>
 
         <div className="rounded-[2rem] border border-black/10 bg-white/45 p-6 shadow-sm">
-          <div className="aspect-[4/3] rounded-[1.5rem] border border-dashed border-black/20 bg-[#eee6d8] p-6">
-            <div className="flex h-full items-center justify-center text-center">
-              <div>
-                <p className="text-sm font-medium uppercase tracking-[0.2em] text-black/45">
-                  Cover image pending
-                </p>
-                <p className="mt-3 text-sm leading-6 text-black/55">
-                  Club photo, event poster, or archive visual can be placed here.
-                </p>
-              </div>
-            </div>
+          <div className="flex aspect-[4/3] items-center justify-center rounded-[1.5rem] bg-white p-8">
+            <img
+              src="/images/ctc-logo.png"
+              alt="Critical Thinking Club logo"
+              className="max-h-full max-w-full object-contain"
+            />
           </div>
         </div>
       </section>
