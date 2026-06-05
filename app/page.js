@@ -43,7 +43,7 @@ export default function Home() {
           </a>
 
           <div className="hidden gap-6 text-sm text-black/65 md:flex">
-            <a href="/#about" className="hover:text-black">About</a>
+            <a href="/" className="hover:text-black">Home</a>
             <a href="/presidents" className="hover:text-black">Presidents</a>
             <a href="/archive" className="hover:text-black">Archive</a>
             <a href="/awards" className="hover:text-black">Past Awards</a>
