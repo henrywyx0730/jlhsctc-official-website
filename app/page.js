@@ -1,27 +1,32 @@
-const archiveCategories = [
+const sections = [
+  {
+    title: "Archive",
+    description: "Club records, articles, documents, photos, and historical materials will be organized here.",
+    status: "Content pending",
+  },
+  {
+    title: "Presidents",
+    description: "Current and past presidents, their terms, photos, and contribution summaries will be displayed here.",
+    status: "Content pending",
+  },
+  {
+    title: "Past Awards",
+    description: "Club awards, individual awards, competition results, and achievements will be collected here.",
+    status: "Content pending",
+  },
   {
     title: "Events",
-    description: "Public events, club activities, and major moments will be archived here.",
+    description: "Past and future club events, activities, posters, and event summaries will be archived here.",
     status: "Content pending",
   },
   {
-    title: "Articles",
-    description: "Student essays, reflections, publications, and written pieces will be collected here.",
+    title: "Members",
+    description: "Current members, contributors, organizers, and leadership team information will be added here.",
     status: "Content pending",
   },
   {
-    title: "Projects",
-    description: "Club projects, research initiatives, and collaborative work will be displayed here.",
-    status: "Content pending",
-  },
-  {
-    title: "Media",
-    description: "Photos, videos, posters, and visual records will be organized here.",
-    status: "Content pending",
-  },
-  {
-    title: "Documents",
-    description: "PDFs, forms, records, and official club materials will be stored here.",
+    title: "Contact",
+    description: "Contact information, contribution guidelines, and submission methods will be added here.",
     status: "Content pending",
   },
 ];
@@ -29,37 +34,31 @@ const archiveCategories = [
 const timelineItems = [
   {
     year: "Year",
-    title: "Milestone title pending",
+    title: "Club milestone pending",
     description: "A short description of this stage will be added after the club materials are collected.",
   },
   {
     year: "Year",
-    title: "Milestone title pending",
+    title: "Club milestone pending",
     description: "A short description of this stage will be added after the club materials are collected.",
   },
   {
     year: "Year",
-    title: "Milestone title pending",
+    title: "Club milestone pending",
     description: "A short description of this stage will be added after the club materials are collected.",
   },
 ];
 
-const members = [
-  {
-    name: "Member Name",
-    role: "Role pending",
-    description: "Short biography or contribution summary will be added later.",
-  },
-  {
-    name: "Member Name",
-    role: "Role pending",
-    description: "Short biography or contribution summary will be added later.",
-  },
-  {
-    name: "Member Name",
-    role: "Role pending",
-    description: "Short biography or contribution summary will be added later.",
-  },
+const presidentCards = [
+  "Current President",
+  "Past President",
+  "Past President",
+];
+
+const awardCards = [
+  "Club Awards",
+  "Individual Awards",
+  "Competition Results",
 ];
 
 export default function Home() {
@@ -71,18 +70,21 @@ export default function Home() {
             <img
               src="/images/ctc-logo.png"
               alt="Critical Thinking Club logo"
-              className="h-10 w-10 rounded-full object-contain bg-white p-1"
+              className="h-10 w-10 rounded-full bg-white object-contain p-1"
             />
             <span className="text-sm font-semibold tracking-[0.25em] uppercase">
               CTC
             </span>
           </a>
+
           <div className="hidden gap-6 text-sm text-black/65 md:flex">
             <a href="#about" className="hover:text-black">About</a>
             <a href="#archive" className="hover:text-black">Archive</a>
-            <a href="#timeline" className="hover:text-black">Timeline</a>
+            <a href="#presidents" className="hover:text-black">Presidents</a>
+            <a href="#awards" className="hover:text-black">Past Awards</a>
+            <a href="#events" className="hover:text-black">Events</a>
             <a href="#members" className="hover:text-black">Members</a>
-            <a href="#contribute" className="hover:text-black">Contribute</a>
+            <a href="#contact" className="hover:text-black">Contact</a>
           </div>
         </nav>
       </header>
@@ -96,21 +98,21 @@ export default function Home() {
             Critical Thinking Club
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-black/65">
-            A digital archive for preserving the club&apos;s activities, writings,
-            projects, media, and collective memory.
+            The official website of the Critical Thinking Club, featuring club history,
+            archives, presidents, awards, events, and member contributions.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#archive"
               className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition hover:bg-black/80"
             >
-              View archive structure
+              Explore the website
             </a>
             <a
-              href="#contribute"
+              href="#contact"
               className="rounded-full border border-black/20 px-6 py-3 text-sm font-medium transition hover:border-black"
             >
-              Submit materials
+              Contribute materials
             </a>
           </div>
         </div>
@@ -133,13 +135,13 @@ export default function Home() {
           </p>
           <div className="mt-6 grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
             <h2 className="text-3xl font-semibold md:text-5xl">
-              About the Critical Thinking Club
+              About the Club
             </h2>
             <div className="space-y-4 text-base leading-8 text-black/65">
               <p>
                 This section is reserved for the club&apos;s official introduction.
                 The final text can include the club&apos;s mission, founding story,
-                values, and major areas of activity.
+                core values, activities, and role within the school community.
               </p>
               <p>
                 Content will be added after the English drafts and supporting
@@ -154,20 +156,20 @@ export default function Home() {
         <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
-              Archive
+              Website Sections
             </p>
             <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-              Material categories
+              Official club records
             </h2>
           </div>
           <p className="max-w-xl text-sm leading-6 text-black/55">
-            The structure is ready. Specific entries, photos, documents, and
-            written descriptions can be added later.
+            The website structure is ready. Specific archives, president records,
+            awards, event descriptions, photos, and documents can be added later.
           </p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {archiveCategories.map((item) => (
+          {sections.map((item) => (
             <article
               key={item.title}
               className="rounded-3xl border border-black/10 bg-white/55 p-6 shadow-sm transition hover:-translate-y-1 hover:bg-white"
@@ -190,7 +192,7 @@ export default function Home() {
             Timeline
           </p>
           <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-            Club history
+            Club timeline
           </h2>
 
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -209,42 +211,103 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="members" className="mx-auto max-w-6xl px-6 py-20">
+      <section id="presidents" className="mx-auto max-w-6xl px-6 py-20">
         <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
-          Members
+          Presidents
         </p>
         <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-          Team and contributors
+          Presidents of the Club
         </h2>
-
         <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {members.map((member, index) => (
-            <article key={index} className="rounded-3xl border border-black/10 bg-white/55 p-6">
-              <div className="mb-5 aspect-square rounded-2xl border border-dashed border-black/15 bg-[#eee6d8]" />
-              <h3 className="text-xl font-semibold">{member.name}</h3>
-              <p className="mt-1 text-sm text-black/45">{member.role}</p>
+          {presidentCards.map((title, index) => (
+            <article key={`${title}-${index}`} className="rounded-3xl border border-black/10 bg-white/55 p-6">
+              <p className="text-sm uppercase tracking-[0.2em] text-black/40">
+                Content pending
+              </p>
+              <h3 className="mt-5 text-xl font-semibold">{title}</h3>
               <p className="mt-4 text-sm leading-7 text-black/60">
-                {member.description}
+                Name, term year, photo, and contribution summary will be added later.
               </p>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="contribute" className="bg-white/40">
+      <section id="awards" className="border-y border-black/10 bg-white/35">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
+            Past Awards
+          </p>
+          <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
+            Awards and achievements
+          </h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {awardCards.map((title, index) => (
+              <article key={`${title}-${index}`} className="rounded-3xl border border-black/10 bg-[#f7f3ea] p-6">
+                <p className="text-sm uppercase tracking-[0.2em] text-black/40">
+                  Content pending
+                </p>
+                <h3 className="mt-5 text-xl font-semibold">{title}</h3>
+                <p className="mt-4 text-sm leading-7 text-black/60">
+                  Award names, years, recipients, and descriptions will be added later.
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="events" className="mx-auto max-w-6xl px-6 py-20">
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
+          Events
+        </p>
+        <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
+          Events and activities
+        </h2>
+        <div className="mt-10 rounded-[2rem] border border-dashed border-black/15 bg-white/45 p-8">
+          <p className="text-base leading-8 text-black/65">
+            Event records, photos, posters, and summaries will be added here after
+            the club materials are collected.
+          </p>
+        </div>
+      </section>
+
+      <section id="members" className="mx-auto max-w-6xl px-6 py-20">
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
+          Members
+        </p>
+        <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
+          Members and contributors
+        </h2>
+
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {["Member Name", "Member Name", "Member Name"].map((name, index) => (
+            <article key={index} className="rounded-3xl border border-black/10 bg-white/55 p-6">
+              <div className="mb-5 aspect-square rounded-2xl border border-dashed border-black/15 bg-[#eee6d8]" />
+              <h3 className="text-xl font-semibold">{name}</h3>
+              <p className="mt-1 text-sm text-black/45">Role pending</p>
+              <p className="mt-4 text-sm leading-7 text-black/60">
+                Short biography or contribution summary will be added later.
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact" className="bg-white/40">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="rounded-[2rem] border border-black/10 bg-[#f7f3ea] p-8 md:p-12">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
-              Contribute
+              Contact
             </p>
             <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-              Materials to collect
+              Contact and contributions
             </h2>
             <p className="mt-6 max-w-3xl text-base leading-8 text-black/65">
-              Future contributors can provide English drafts, event summaries,
-              photos, videos, posters, PDFs, and other records. Each archive item
-              should ideally include a title, date, category, short description,
-              full text, images, related files, and contributor name.
+              Members and contributors can provide English drafts, event summaries,
+              photos, videos, posters, PDFs, award records, president records,
+              and other club materials. Each item should ideally include a title,
+              date, category, short description, images or files, and contributor name.
             </p>
 
             <div className="mt-8 grid gap-4 md:grid-cols-4">
@@ -259,7 +322,7 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-black/10 px-6 py-8 text-center text-sm text-black/45">
-        Critical Thinking Club Online Archive · Content pending
+        Critical Thinking Club Official Website · Content pending
       </footer>
     </main>
   );
