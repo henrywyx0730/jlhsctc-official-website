@@ -9,7 +9,7 @@ const presidentTerms = [
         chineseName: "吴昱贤",
         role: "President",
         education:
-          "Nanjing JLHS ZMB Class of 2025 · University of Chicago Class of 2029",
+          "ZMB Class of 2025 · University of Chicago Class of 2029",
         image: "/president-profiles/henry-wu.jpg",
         bio: "Henry Wu served as President of the Critical Thinking Club during the 2023–2024 academic year. As one of the club’s leading organizers, he helped shape CTC into a student-led space for critical discussion, public reasoning, legal argumentation, and civic-minded intellectual exchange. With extensive experience in mock trial, public speaking, student leadership, and event organization, he contributed to the club’s long-term structure and identity while promoting a culture of clear thinking, persuasive communication, and rigorous debate.",
         achievements: [
@@ -27,7 +27,7 @@ const presidentTerms = [
         chineseName: "刘美忱",
         role: "Co-President",
         education:
-          "Nanjing JLHS ZMB Class of 2025 · University of Toronto Class of 2029",
+          "ZMB Class of 2025 · University of Toronto Class of 2029",
         image: "/president-profiles/lucy-liu.png",
         bio: "Lucy Liu served as Co-President of the Critical Thinking Club during the 2023–2024 academic year. During her time at JLHS ZMB, she was actively involved in public speaking, mock trial, and debate-related activities, including TEDx@JLHS, NUMT, PPMT, and UofT Cup competitions.",
         achievements: [
@@ -41,10 +41,10 @@ const presidentTerms = [
         ],
       },
       {
-        name: "Profile Pending",
-        chineseName: "",
+        name: "Coco Hu",
+        chineseName: "胡可萱",
         role: "Co-President",
-        education: "Nanjing JLHS ZMB",
+        education: "ZMB Class of 2025",
         image: null,
         bio: "Profile pending.",
         achievements: [],
