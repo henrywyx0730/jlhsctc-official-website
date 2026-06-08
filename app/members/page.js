@@ -1,53 +1,75 @@
-export default function MembersPage() {
-  return (
-    <main className="min-h-screen bg-[#f7f3ea] text-[#17130d]">
-      <header className="sticky top-0 z-50 border-b border-black/10 bg-[#f7f3ea]/90 backdrop-blur">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="/" className="flex items-center gap-3">
-            <img
-              src="/images/ctc-logo.png"
-              alt="Critical Thinking Club logo"
-              className="h-10 w-10 rounded-full bg-white object-contain p-1"
-            />
-            <span className="text-sm font-semibold tracking-[0.25em] uppercase">
-              CTC
-            </span>
-          </a>
+const items = [
+  { title: "Current Members", description: "Content pending." },
+  { title: "Contributors", description: "Content pending." },
+  { title: "Organizers", description: "Content pending." },
+];
 
-          <div className="hidden gap-6 text-sm text-black/65 md:flex">
+function Header() {
+  return (
+    <header className="sticky top-0 z-50 border-b border-[#d0d7de] bg-white/95 backdrop-blur">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+        <a href="/" className="flex items-center gap-3">
+          <img
+            src="/images/ctc-logo.png"
+            alt="Critical Thinking Club logo"
+            className="h-9 w-9 rounded-md border border-[#d0d7de] bg-white object-contain p-1"
+          />
+          <span className="text-sm font-semibold tracking-[0.18em] uppercase">
+            CTC
+          </span>
+        </a>
+
+        <div className="hidden gap-5 text-sm text-black/65 md:flex">
             <a href="/" className="hover:text-black">Home</a>
             <a href="/presidents" className="hover:text-black">Presidents</a>
             <a href="/archive" className="hover:text-black">Archive</a>
             <a href="/awards" className="hover:text-black">Past Awards</a>
             <a href="/events" className="hover:text-black">Events</a>
-            <a href="/members" className="hover:text-black">Members</a>
+            <a href="/members" className="font-medium text-black">Members</a>
             <a href="/contact" className="hover:text-black">Contact</a>
-          </div>
-        </nav>
-      </header>
+        </div>
+      </nav>
+    </header>
+  );
+}
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
+export default function MembersPage() {
+  return (
+    <main className="min-h-screen bg-white text-[#17130d]">
+      <Header />
+
+      <section className="mx-auto max-w-6xl px-6 py-12">
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-black/50">
           Members
         </p>
-        <h1 className="mt-4 text-5xl font-semibold tracking-tight md:text-7xl">
-          Members and Contributors
+        <h1 className="mt-3 text-5xl font-semibold tracking-tight md:text-6xl">
+          Members
         </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-black/65">
-          Current members, contributors, organizers, and leadership team information
-          will be added here.
+        <p className="mt-5 max-w-3xl text-base leading-7 text-black/65">
+          Current members, contributors, organizers, and leadership team information will be listed here.
         </p>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {["Member Name", "Member Name", "Member Name"].map((name, index) => (
-            <article key={`${name}-${index}`} className="rounded-3xl border border-black/10 bg-white/55 p-6">
-              <div className="mb-5 aspect-square rounded-2xl border border-dashed border-black/15 bg-[#eee6d8]" />
-              <h2 className="text-2xl font-semibold">{name}</h2>
-              <p className="mt-1 text-sm text-black/45">Role pending</p>
-              <p className="mt-4 text-sm leading-7 text-black/60">
-                Short biography or contribution summary will be added later.
-              </p>
-            </article>
+        <div className="mt-10 overflow-hidden rounded-xl border border-[#d0d7de] bg-white">
+          <div className="grid grid-cols-[1fr_auto] border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-black/45">
+            <span>Section</span>
+            <span>Status</span>
+          </div>
+
+          {items.map((item, index) => (
+            <div
+              key={item.title}
+              className={`grid grid-cols-[1fr_auto] gap-4 px-5 py-4 ${index !== items.length - 1 ? "border-b border-[#d0d7de]" : ""}`}
+            >
+              <div>
+                <h2 className="text-base font-semibold">{item.title}</h2>
+                <p className="mt-1 text-sm leading-6 text-black/55">
+                  {item.description}
+                </p>
+              </div>
+              <span className="self-center rounded-md border border-[#d0d7de] bg-[#f6f8fa] px-2.5 py-1 text-xs text-black/55">
+                Pending
+              </span>
+            </div>
           ))}
         </div>
       </section>

@@ -1,54 +1,75 @@
-export default function AwardsPage() {
-  return (
-    <main className="min-h-screen bg-[#f7f3ea] text-[#17130d]">
-      <header className="sticky top-0 z-50 border-b border-black/10 bg-[#f7f3ea]/90 backdrop-blur">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="/" className="flex items-center gap-3">
-            <img
-              src="/images/ctc-logo.png"
-              alt="Critical Thinking Club logo"
-              className="h-10 w-10 rounded-full bg-white object-contain p-1"
-            />
-            <span className="text-sm font-semibold tracking-[0.25em] uppercase">
-              CTC
-            </span>
-          </a>
+const items = [
+  { title: "Team Awards", description: "Content pending." },
+  { title: "Individual Awards", description: "Content pending." },
+  { title: "Competition Results", description: "Content pending." },
+];
 
-          <div className="hidden gap-6 text-sm text-black/65 md:flex">
+function Header() {
+  return (
+    <header className="sticky top-0 z-50 border-b border-[#d0d7de] bg-white/95 backdrop-blur">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+        <a href="/" className="flex items-center gap-3">
+          <img
+            src="/images/ctc-logo.png"
+            alt="Critical Thinking Club logo"
+            className="h-9 w-9 rounded-md border border-[#d0d7de] bg-white object-contain p-1"
+          />
+          <span className="text-sm font-semibold tracking-[0.18em] uppercase">
+            CTC
+          </span>
+        </a>
+
+        <div className="hidden gap-5 text-sm text-black/65 md:flex">
             <a href="/" className="hover:text-black">Home</a>
             <a href="/presidents" className="hover:text-black">Presidents</a>
             <a href="/archive" className="hover:text-black">Archive</a>
-            <a href="/awards" className="hover:text-black">Past Awards</a>
+            <a href="/awards" className="font-medium text-black">Past Awards</a>
             <a href="/events" className="hover:text-black">Events</a>
             <a href="/members" className="hover:text-black">Members</a>
             <a href="/contact" className="hover:text-black">Contact</a>
-          </div>
-        </nav>
-      </header>
+        </div>
+      </nav>
+    </header>
+  );
+}
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
+export default function AwardsPage() {
+  return (
+    <main className="min-h-screen bg-white text-[#17130d]">
+      <Header />
+
+      <section className="mx-auto max-w-6xl px-6 py-12">
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-black/50">
           Past Awards
         </p>
-        <h1 className="mt-4 text-5xl font-semibold tracking-tight md:text-7xl">
-          Awards and Achievements
+        <h1 className="mt-3 text-5xl font-semibold tracking-tight md:text-6xl">
+          Past Awards
         </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-black/65">
-          Club awards, individual awards, competition results, and achievements
-          will be collected here.
+        <p className="mt-5 max-w-3xl text-base leading-7 text-black/65">
+          Club awards, individual awards, competition results, and achievements will be organized here.
         </p>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {["Club Awards", "Individual Awards", "Competition Results"].map((title) => (
-            <article key={title} className="rounded-3xl border border-black/10 bg-white/55 p-6">
-              <p className="text-sm uppercase tracking-[0.2em] text-black/40">
-                Content pending
-              </p>
-              <h2 className="mt-5 text-2xl font-semibold">{title}</h2>
-              <p className="mt-4 text-sm leading-7 text-black/60">
-                Award names, years, recipients, and descriptions will be added later.
-              </p>
-            </article>
+        <div className="mt-10 overflow-hidden rounded-xl border border-[#d0d7de] bg-white">
+          <div className="grid grid-cols-[1fr_auto] border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-black/45">
+            <span>Section</span>
+            <span>Status</span>
+          </div>
+
+          {items.map((item, index) => (
+            <div
+              key={item.title}
+              className={`grid grid-cols-[1fr_auto] gap-4 px-5 py-4 ${index !== items.length - 1 ? "border-b border-[#d0d7de]" : ""}`}
+            >
+              <div>
+                <h2 className="text-base font-semibold">{item.title}</h2>
+                <p className="mt-1 text-sm leading-6 text-black/55">
+                  {item.description}
+                </p>
+              </div>
+              <span className="self-center rounded-md border border-[#d0d7de] bg-[#f6f8fa] px-2.5 py-1 text-xs text-black/55">
+                Pending
+              </span>
+            </div>
           ))}
         </div>
       </section>

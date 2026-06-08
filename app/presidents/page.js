@@ -3,23 +3,32 @@ const presidentTerms = [
     year: "2023–2024",
     description:
       "The 2023–2024 leadership team of the Critical Thinking Club.",
-    president: {
-      name: "Henry Wu",
-      chineseName: "吴昱贤",
-      role: "President",
-      education: "Nanjing JLHS ZMB Class of 2025",
-      image: null,
-      bio: "Profile pending.",
-      achievements: [],
-    },
-    coPresidents: [
+    members: [
+      {
+        name: "Henry Wu",
+        chineseName: "吴昱贤",
+        role: "President",
+        education:
+          "Nanjing JLHS ZMB Class of 2025 · University of Chicago Class of 2029",
+        image: "/president-profiles/henry-wu.jpg",
+        bio: "Henry Wu served as President of the Critical Thinking Club during the 2023–2024 academic year. As one of the club’s leading organizers, he helped shape CTC into a student-led space for critical discussion, public reasoning, legal argumentation, and civic-minded intellectual exchange. With extensive experience in mock trial, public speaking, student leadership, and event organization, he contributed to the club’s long-term structure and identity while promoting a culture of clear thinking, persuasive communication, and rigorous debate.",
+        achievements: [
+          "2023 TEDx@JLHS Speaker",
+          "2023 NUMT Summer Tournament Outstanding Attorney",
+          "2024 NUMT Summer Tournament Outstanding Attorney",
+          "2024 NUMT Summer Tournament Team Champion",
+          "2024–2025 TEDx@JLHS Curator",
+          "NUMT Organizing Committee Member",
+          "Developer and Maintainer of the NUMT Tabulation System",
+        ],
+      },
       {
         name: "Lucy Liu",
         chineseName: "刘美忱",
         role: "Co-President",
         education:
           "Nanjing JLHS ZMB Class of 2025 · University of Toronto Class of 2029",
-        image: "/president-profiles/lucy-meichen-liu.png",
+        image: "/president-profiles/lucy-liu.png",
         bio: "Lucy Liu served as Co-President of the Critical Thinking Club during the 2023–2024 academic year. During her time at JLHS ZMB, she was actively involved in public speaking, mock trial, and debate-related activities, including TEDx@JLHS, NUMT, PPMT, and UofT Cup competitions.",
         achievements: [
           "2023 TEDx@JLHS Host",
@@ -46,22 +55,22 @@ const presidentTerms = [
 
 function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-[#f7f3ea]/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <header className="sticky top-0 z-50 border-b border-[#d0d7de] bg-white/95 backdrop-blur">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <a href="/" className="flex items-center gap-3">
           <img
             src="/images/ctc-logo.png"
             alt="Critical Thinking Club logo"
-            className="h-10 w-10 rounded-full bg-white object-contain p-1"
+            className="h-9 w-9 rounded-md border border-[#d0d7de] bg-white object-contain p-1"
           />
-          <span className="text-sm font-semibold tracking-[0.25em] uppercase">
+          <span className="text-sm font-semibold tracking-[0.18em] uppercase">
             CTC
           </span>
         </a>
 
-        <div className="hidden gap-6 text-sm text-black/65 md:flex">
+        <div className="hidden gap-5 text-sm text-black/65 md:flex">
           <a href="/" className="hover:text-black">Home</a>
-          <a href="/presidents" className="hover:text-black">Presidents</a>
+          <a href="/presidents" className="font-medium text-black">Presidents</a>
           <a href="/archive" className="hover:text-black">Archive</a>
           <a href="/awards" className="hover:text-black">Past Awards</a>
           <a href="/events" className="hover:text-black">Events</a>
@@ -73,164 +82,117 @@ function Header() {
   );
 }
 
-function ProfileImage({ person, large = false }) {
-  if (person.image) {
-    return (
-      <div className={`overflow-hidden rounded-[1.5rem] bg-[#eee6d8] ${large ? "aspect-[4/5]" : "aspect-square"}`}>
-        <img
-          src={person.image}
-          alt={`${person.name} profile photo`}
-          className="h-full w-full object-cover"
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div className={`flex items-center justify-center rounded-[1.5rem] border border-dashed border-black/15 bg-[#eee6d8] ${large ? "aspect-[4/5]" : "aspect-square"}`}>
-      <span className="text-sm uppercase tracking-[0.2em] text-black/35">
-        Photo pending
-      </span>
-    </div>
-  );
-}
-
 function AchievementList({ achievements }) {
   if (!achievements.length) {
     return (
-      <p className="mt-6 text-sm leading-7 text-black/45">
+      <p className="text-sm leading-6 text-black/45">
         Selected achievements will be added later.
       </p>
     );
   }
 
   return (
-    <div className="mt-8">
-      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-black/40">
-        Selected Achievements
-      </p>
-      <ul className="mt-4 space-y-2 text-sm leading-6 text-black/65">
-        {achievements.map((achievement) => (
-          <li key={achievement} className="flex gap-2">
-            <span className="text-black/35">•</span>
-            <span>{achievement}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className="grid gap-x-5 gap-y-2 text-sm leading-6 text-black/65 md:grid-cols-2">
+      {achievements.map((achievement) => (
+        <li key={achievement} className="flex gap-2">
+          <span className="text-black/30">•</span>
+          <span>{achievement}</span>
+        </li>
+      ))}
+    </ul>
   );
 }
 
-function PresidentCard({ person }) {
+function ProfileRow({ person }) {
   return (
-    <article className="overflow-hidden rounded-[2rem] border border-black/10 bg-white/60 shadow-sm">
-      <div className="grid gap-0 md:grid-cols-[0.75fr_1.25fr]">
-        <div className="bg-[#eee6d8] p-6">
-          <ProfileImage person={person} large />
-        </div>
+    <article className="border-t border-[#d0d7de] p-5">
+      <div className="grid gap-5 md:grid-cols-[180px_1fr]">
+        {person.image ? (
+          <div className="aspect-[4/3] overflow-hidden rounded-lg border border-[#d0d7de] bg-[#f6f8fa]">
+            <img
+              src={person.image}
+              alt={`${person.name} profile photo`}
+              className="h-full w-full object-cover"
+            />
+          </div>
+        ) : (
+          <div className="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-[#d0d7de] bg-[#f6f8fa]">
+            <span className="text-xs uppercase tracking-[0.18em] text-black/35">
+              Photo pending
+            </span>
+          </div>
+        )}
 
-        <div className="p-7 md:p-10">
-          <p className="text-sm uppercase tracking-[0.2em] text-black/40">
-            {person.role}
-          </p>
-          <h3 className="mt-4 text-3xl font-semibold md:text-4xl">
-            {person.name}
-          </h3>
-          {person.chineseName && (
-            <p className="mt-1 text-lg text-black/50">
-              {person.chineseName}
-            </p>
-          )}
-          <p className="mt-4 text-sm leading-7 text-black/55">
+        <div>
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="rounded-full border border-[#d0d7de] bg-[#f6f8fa] px-2.5 py-1 text-xs font-medium text-black/65">
+              {person.role}
+            </span>
+            <h3 className="text-2xl font-semibold">{person.name}</h3>
+            {person.chineseName && (
+              <span className="text-base text-black/50">{person.chineseName}</span>
+            )}
+          </div>
+
+          <p className="mt-3 text-sm leading-6 text-black/55">
             {person.education}
           </p>
-          <p className="mt-6 text-sm leading-7 text-black/65">
+          <p className="mt-4 text-sm leading-7 text-black/70">
             {person.bio}
           </p>
-          <AchievementList achievements={person.achievements} />
+
+          <div className="mt-5">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-black/40">
+              Selected Achievements
+            </p>
+            <AchievementList achievements={person.achievements} />
+          </div>
         </div>
       </div>
     </article>
   );
 }
 
-function CoPresidentCard({ person }) {
-  return (
-    <article className="rounded-[2rem] border border-black/10 bg-white/60 p-6 shadow-sm">
-      <ProfileImage person={person} />
-      <p className="mt-6 text-sm uppercase tracking-[0.2em] text-black/40">
-        {person.role}
-      </p>
-      <h3 className="mt-3 text-2xl font-semibold">
-        {person.name}
-      </h3>
-      {person.chineseName && (
-        <p className="mt-1 text-base text-black/50">
-          {person.chineseName}
-        </p>
-      )}
-      <p className="mt-4 text-sm leading-7 text-black/55">
-        {person.education}
-      </p>
-      <p className="mt-5 text-sm leading-7 text-black/65">
-        {person.bio}
-      </p>
-      <AchievementList achievements={person.achievements} />
-    </article>
-  );
-}
-
 export default function PresidentsPage() {
   return (
-    <main className="min-h-screen bg-[#f7f3ea] text-[#17130d]">
+    <main className="min-h-screen bg-white text-[#17130d]">
       <Header />
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
+      <section className="mx-auto max-w-6xl px-6 py-12">
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-black/50">
           Presidents
         </p>
-        <h1 className="mt-4 text-5xl font-semibold tracking-tight md:text-7xl">
+        <h1 className="mt-3 text-5xl font-semibold tracking-tight md:text-6xl">
           Past Presidents of the Club
         </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-black/65">
+        <p className="mt-5 max-w-3xl text-base leading-7 text-black/65">
           Profiles are organized by academic year and leadership role, preserving
           each term&apos;s president and co-presidents.
         </p>
 
-        <div className="mt-16 space-y-20">
+        <div className="mt-10 space-y-10">
           {presidentTerms.map((term) => (
-            <section key={term.year}>
-              <div className="mb-8 flex flex-col justify-between gap-4 border-b border-black/10 pb-6 md:flex-row md:items-end">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
-                    Term
+            <section
+              key={term.year}
+              className="overflow-hidden rounded-xl border border-[#d0d7de] bg-white"
+            >
+              <div className="border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-4">
+                <div className="flex flex-col justify-between gap-2 md:flex-row md:items-end">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-black/45">
+                      Term
+                    </p>
+                    <h2 className="mt-1 text-2xl font-semibold">{term.year}</h2>
+                  </div>
+                  <p className="max-w-xl text-sm leading-6 text-black/55">
+                    {term.description}
                   </p>
-                  <h2 className="mt-3 text-4xl font-semibold">
-                    {term.year}
-                  </h2>
-                </div>
-                <p className="max-w-xl text-sm leading-6 text-black/55">
-                  {term.description}
-                </p>
-              </div>
-
-              <div>
-                <p className="mb-5 text-sm font-semibold uppercase tracking-[0.25em] text-black/45">
-                  President
-                </p>
-                <PresidentCard person={term.president} />
-              </div>
-
-              <div className="mt-10">
-                <p className="mb-5 text-sm font-semibold uppercase tracking-[0.25em] text-black/45">
-                  Co-Presidents
-                </p>
-                <div className="grid gap-5 md:grid-cols-2">
-                  {term.coPresidents.map((person) => (
-                    <CoPresidentCard key={person.name} person={person} />
-                  ))}
                 </div>
               </div>
+
+              {term.members.map((person) => (
+                <ProfileRow key={person.name} person={person} />
+              ))}
             </section>
           ))}
         </div>
