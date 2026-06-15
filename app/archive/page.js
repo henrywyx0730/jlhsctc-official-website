@@ -29,7 +29,7 @@ function Header() {
             alt="Critical Thinking Club logo"
             className="h-9 w-9 rounded-md border border-[#d0d7de] bg-white object-contain p-1"
           />
-          <span className="text-sm font-semibold tracking-[0.18em] uppercase">
+          <span className="text-sm font-semibold tracking-[0.06em] uppercase">
             CTC
           </span>
         </a>
@@ -54,9 +54,6 @@ export default function ArchivePage() {
       <Header />
 
       <section className="mx-auto max-w-6xl px-6 py-12">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-black/50">
-          Archive
-        </p>
         <h1 className="mt-3 text-5xl font-semibold tracking-tight md:text-6xl">
           Club Archive
         </h1>
@@ -66,7 +63,7 @@ export default function ArchivePage() {
         </p>
 
         <div className="mt-10 overflow-hidden rounded-xl border border-[#d0d7de] bg-white">
-          <div className="grid grid-cols-[1fr_auto] border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-black/45">
+          <div className="grid grid-cols-[1fr_auto] border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-3 text-sm font-semibold text-black/65">
             <span>Archive Section</span>
             <span>Status</span>
           </div>

@@ -21,9 +21,6 @@ export default function ArchiveArticlesPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-16">
         <a href="/archive" className="text-sm text-black/50 hover:text-black">← Back to archive</a>
-        <p className="mt-12 text-sm font-semibold uppercase tracking-[0.25em] text-black/50">
-          Archive / Articles
-        </p>
         <h1 className="mt-4 text-5xl font-semibold tracking-tight md:text-7xl">
           Articles
         </h1>

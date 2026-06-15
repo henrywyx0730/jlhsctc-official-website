@@ -8,7 +8,7 @@ function Header() {
             alt="Critical Thinking Club logo"
             className="h-9 w-9 rounded-md border border-[#d0d7de] bg-white object-contain p-1"
           />
-          <span className="text-sm font-semibold tracking-[0.18em] uppercase">
+          <span className="text-sm font-semibold tracking-[0.06em] uppercase">
             CTC
           </span>
         </a>
@@ -31,9 +31,6 @@ function SectionBox({ eyebrow, title, children }) {
   return (
     <section className="overflow-hidden rounded-xl border border-[#d0d7de] bg-white">
       <div className="border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-4">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-black/45">
-          {eyebrow}
-        </p>
         <h2 className="mt-1 text-2xl font-semibold">{title}</h2>
       </div>
       <div className="p-5">{children}</div>
@@ -49,9 +46,6 @@ export default function Home() {
       <section className="border-b border-[#d0d7de] bg-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-black/50">
-              Official Website
-            </p>
             <h1 className="mt-3 text-5xl font-semibold tracking-tight md:text-6xl">
               Critical Thinking Club
             </h1>

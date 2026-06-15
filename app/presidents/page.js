@@ -69,7 +69,7 @@ function Header() {
             alt="Critical Thinking Club logo"
             className="h-9 w-9 rounded-md border border-[#d0d7de] bg-white object-contain p-1"
           />
-          <span className="text-sm font-semibold tracking-[0.18em] uppercase">
+          <span className="text-sm font-semibold tracking-[0.06em] uppercase">
             CTC
           </span>
         </a>
@@ -123,10 +123,7 @@ function ProfileRow({ person }) {
           </div>
         ) : (
           <div className="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-[#d0d7de] bg-[#f6f8fa]">
-            <span className="text-xs uppercase tracking-[0.18em] text-black/35">
-              Photo pending
-            </span>
-          </div>
+</div>
         )}
 
         <div>
@@ -148,7 +145,7 @@ function ProfileRow({ person }) {
           </p>
 
           <div className="mt-5">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-black/40">
+            <p className="mb-3 text-sm font-semibold text-black/70">
               Selected Achievements
             </p>
             <AchievementList achievements={person.achievements} />
@@ -165,13 +162,10 @@ export default function PresidentsPage() {
       <Header />
 
       <section className="mx-auto max-w-6xl px-6 py-12">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-black/50">
-          Presidents
-        </p>
         <h1 className="mt-3 text-5xl font-semibold tracking-tight md:text-6xl">
           Past Presidents of the Club
         </h1>
-        <p className="mt-5 max-w-3xl text-base leading-7 text-black/65">
+        <p className="mt-5 max-w-5xl text-base leading-7 text-black/65">
           Profiles are organized by academic year and leadership role, preserving
           each term&apos;s president and co-presidents.
         </p>
@@ -185,7 +179,7 @@ export default function PresidentsPage() {
               <div className="border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-4">
                 <div className="flex flex-col justify-between gap-2 md:flex-row md:items-end">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-black/45">
+                    <p className="text-sm font-semibold text-black/70">
                       Term
                     </p>
                     <h2 className="mt-1 text-2xl font-semibold">{term.year}</h2>
