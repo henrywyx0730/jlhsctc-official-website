@@ -93,10 +93,10 @@ export default function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-md px-3 py-2 text-sm ${
+                  className={`rounded-md px-3 py-2 text-sm transition-all duration-100 hover:bg-black/5 active:scale-[0.99] active:bg-black/10 ${
                     active
-                      ? "border border-[#d0d7de] bg-white font-semibold text-black"
-                      : "text-black/65 hover:bg-white hover:text-black"
+                      ? "font-semibold text-black"
+                      : "font-medium text-black/65"
                   }`}
                   aria-current={active ? "page" : undefined}
                   onClick={() => setIsOpen(false)}
