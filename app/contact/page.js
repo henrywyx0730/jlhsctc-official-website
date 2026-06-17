@@ -1,42 +1,15 @@
+import SiteHeader from "../components/SiteHeader";
+
 const items = [
   { title: "Official Contact", description: "Content pending." },
   { title: "Social Media", description: "Content pending." },
   { title: "School Information", description: "Content pending." },
 ];
 
-function Header() {
-  return (
-    <header className="sticky top-0 z-50 border-b border-[#d0d7de] bg-white/95 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-        <a href="/" className="flex items-center gap-3">
-          <img
-            src="/images/ctc-logo.png"
-            alt="Critical Thinking Club logo"
-            className="h-9 w-9 rounded-md border border-[#d0d7de] bg-white object-contain p-1"
-          />
-          <span className="text-sm font-semibold tracking-[0.06em] uppercase">
-            CTC
-          </span>
-        </a>
-
-        <div className="hidden gap-5 text-sm text-black/65 md:flex">
-            <a href="/" className="hover:text-black">Home</a>
-            <a href="/presidents" className="hover:text-black">Presidents</a>
-            <a href="/archive" className="hover:text-black">Archive</a>
-            <a href="/awards" className="hover:text-black">Past Awards</a>
-            <a href="/events" className="hover:text-black">Events</a>
-            <a href="/members" className="hover:text-black">Members</a>
-            <a href="/contact" className="font-medium text-black">Contact</a>
-        </div>
-      </nav>
-    </header>
-  );
-}
-
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-white text-[#17130d]">
-      <Header />
+      <SiteHeader />
 
       <section className="mx-auto max-w-6xl px-6 py-12">
         <h1 className="mt-3 text-5xl font-semibold tracking-tight md:text-6xl">

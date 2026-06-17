@@ -1,31 +1,4 @@
-function Header() {
-  return (
-    <header className="sticky top-0 z-50 border-b border-[#d0d7de] bg-white/95 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-        <a href="/" className="flex items-center gap-3">
-          <img
-            src="/images/ctc-logo.png"
-            alt="Critical Thinking Club logo"
-            className="h-9 w-9 rounded-md border border-[#d0d7de] bg-white object-contain p-1"
-          />
-          <span className="text-sm font-semibold tracking-[0.06em] uppercase">
-            CTC
-          </span>
-        </a>
-
-        <div className="hidden gap-5 text-sm text-black/65 md:flex">
-          <a href="/" className="font-medium text-black">Home</a>
-          <a href="/presidents" className="hover:text-black">Presidents</a>
-          <a href="/archive" className="hover:text-black">Archive</a>
-          <a href="/awards" className="hover:text-black">Past Awards</a>
-          <a href="/events" className="hover:text-black">Events</a>
-          <a href="/members" className="hover:text-black">Members</a>
-          <a href="/contact" className="hover:text-black">Contact</a>
-        </div>
-      </nav>
-    </header>
-  );
-}
+import SiteHeader from "./components/SiteHeader";
 
 function SectionBox({ eyebrow, title, children }) {
   return (
@@ -41,7 +14,7 @@ function SectionBox({ eyebrow, title, children }) {
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#17130d]">
-      <Header />
+      <SiteHeader />
 
       <section className="border-b border-[#d0d7de] bg-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1.1fr_0.9fr] md:items-center">
