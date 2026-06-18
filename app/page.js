@@ -49,13 +49,22 @@ export default function Home() {
         <SectionBox eyebrow="About" title="About the Club">
           <div className="space-y-4 text-sm leading-7 text-black/70">
             <p>
-              This section is reserved for the club&apos;s official introduction.
-              The final text can include the club&apos;s mission, founding story,
-              core values, activities, and role within the school community.
+              The Critical Thinking Club is one of the longest-standing student
+              clubs in ZMB history. As a student-led club at Jinling High School ZMB, CTC is
+              dedicated to discussion, argumentation, public reasoning, and
+              intellectual exchange.
             </p>
             <p>
-              Content will be added after the English drafts and supporting
-              materials are collected.
+              Through activities such as mock trial, public speaking,
+              debate-style discussion, and student-led projects, the club
+              encourages members to think clearly, speak persuasively, and
+              engage with complex issues from multiple perspectives.
+            </p>
+            <p>
+              As part of the ZMB student community, CTC aims to preserve a
+              culture of curiosity, rigor, and open-minded conversation while
+              documenting the club&apos;s history, achievements, and student
+              contributions through this official website.
             </p>
           </div>
         </SectionBox>
@@ -67,7 +76,7 @@ export default function Home() {
           </div>
         </SectionBox>
 
-        <SectionBox eyebrow="School" title="JLHS ZMB">
+        <SectionBox eyebrow="School" title="Jinling High School ZMB">
           <div className="grid gap-5 md:grid-cols-[1fr_auto] md:items-start">
             <div className="space-y-3 text-sm leading-7 text-black/70">
               <p>Nanjing Jinling High School, Xinjiekou Campus</p>

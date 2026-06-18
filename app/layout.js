@@ -2,7 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Critical Thinking Club",
-  description: "Official website of the Critical Thinking Club at JLHS ZMB.",
+  description: "Official website of the Critical Thinking Club at Jinling High School ZMB.",
   icons: {
     icon: "/icon.png",
     apple: "/apple-icon.png",
