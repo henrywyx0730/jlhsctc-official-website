@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
@@ -88,10 +89,12 @@ function ProfileRow({ person }) {
     <article className="border-t border-[#d0d7de] p-5">
       <div className="grid gap-5 md:grid-cols-[180px_1fr]">
         {person.image ? (
-          <div className="aspect-[4/3] overflow-hidden rounded-lg border border-[#d0d7de] bg-[#f6f8fa]">
-            <img
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-[#d0d7de] bg-[#f6f8fa]">
+            <Image
               src={person.image}
               alt={`${person.name} profile photo`}
+              fill
+              sizes="(min-width: 768px) 180px, calc(100vw - 72px)"
               className="h-full w-full object-cover"
             />
           </div>

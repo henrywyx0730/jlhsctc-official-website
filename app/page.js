@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 
@@ -32,9 +33,11 @@ export default function Home() {
 
           <div className="rounded-xl border border-[#d0d7de] bg-[#f6f8fa] p-5">
             <div className="flex aspect-[4/3] items-center justify-center rounded-lg border border-[#d0d7de] bg-white p-8">
-              <img
+              <Image
                 src="/images/ctc-logo.png"
                 alt="Critical Thinking Club logo"
+                width={320}
+                height={320}
                 className="max-h-full max-w-full object-contain"
               />
             </div>
