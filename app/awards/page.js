@@ -1,10 +1,57 @@
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
-const items = [
-  { title: "Team Awards", description: "Content pending." },
-  { title: "Individual Awards", description: "Content pending." },
-  { title: "Competition Results", description: "Content pending." },
+const awardSections = [
+  {
+    title: "Team Awards",
+    rows: [
+      "2023 PPMT Summer Tournament Team 6th Place",
+      "2024 NUMT Summer Tournament Team Champion",
+      "2025 NUMT Winter Tournament Team 4th Place",
+    ],
+  },
+  {
+    title: "Individual Awards",
+    rows: [
+      {
+        person: "Henry Wu",
+        award: "2023 NUMT Summer Tournament Outstanding Attorney",
+      },
+      {
+        person: "Henry Wu",
+        award: "2024 NUMT Summer Tournament Outstanding Attorney",
+      },
+      {
+        person: "Lucy Liu",
+        award: "2024 NUMT Summer Tournament Outstanding Witness",
+      },
+      {
+        person: "Lucy Liu",
+        award: "2025 PPMT Summer Tournament Outstanding Attorney",
+      },
+    ],
+  },
+  {
+    title: "Public Speaking & Leadership",
+    groups: [
+      {
+        title: "2023 TEDx Youth@JLHS",
+        rows: [
+          { person: "Henry Wu", role: "Speaker" },
+          { person: "Lucy Liu", role: "Host" },
+          { person: "Coco Hu", role: "Speaker; Event Manager" },
+        ],
+      },
+      {
+        title: "2024–2025 TEDx Youth@JLHS",
+        rows: [
+          { person: "Coco Hu", role: "Executive Officer" },
+          { person: "Henry Wu", role: "Curator" },
+          { person: "Lucy Liu", role: "Speaker" },
+        ],
+      },
+    ],
+  },
 ];
 
 export default function AwardsPage() {
@@ -17,30 +64,82 @@ export default function AwardsPage() {
           Past Awards
         </h1>
         <p className="mt-5 max-w-3xl text-base leading-7 text-black/65">
-          Club awards, individual awards, competition results, and achievements will be organized here.
+          A selected record of team awards, individual awards, competition
+          results, and public speaking achievements associated with the Critical
+          Thinking Club.
         </p>
 
-        <div className="mt-10 overflow-hidden rounded-xl border border-[#d0d7de] bg-white">
-          <div className="grid grid-cols-[1fr_auto] border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-3 text-sm font-semibold text-black/65">
-            <span>Section</span>
-            <span>Status</span>
-          </div>
-
-          {items.map((item, index) => (
-            <div
-              key={item.title}
-              className={`grid grid-cols-[1fr_auto] gap-4 px-5 py-4 ${index !== items.length - 1 ? "border-b border-[#d0d7de]" : ""}`}
+        <div className="mt-10 grid gap-6">
+          {awardSections.map((section) => (
+            <section
+              key={section.title}
+              className="overflow-hidden rounded-xl border border-[#d0d7de] bg-white"
             >
-              <div>
-                <h2 className="text-base font-semibold">{item.title}</h2>
-                <p className="mt-1 text-sm leading-6 text-black/55">
-                  {item.description}
-                </p>
+              <div className="border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-4">
+                <h2 className="text-base font-semibold text-black/75">
+                  {section.title}
+                </h2>
               </div>
-              <span className="self-center rounded-md border border-[#d0d7de] bg-[#f6f8fa] px-2.5 py-1 text-xs text-black/55">
-                Pending
-              </span>
-            </div>
+
+              {section.groups ? (
+                <div className="space-y-4 px-5 py-4">
+                  {section.groups.map((group) => (
+                    <div key={group.title}>
+                      <h3 className="text-sm font-semibold text-black/70">
+                        {group.title}
+                      </h3>
+                      <ul className="mt-2 space-y-2 text-sm leading-6 text-black/65">
+                        {group.rows.map((row) => (
+                          <li
+                            key={`${group.title}-${row.person}-${row.role}`}
+                            className="flex items-start gap-2"
+                          >
+                            <span className="mt-[1px] text-black/30">•</span>
+                            <span>
+                              <span className="font-semibold text-black/75">
+                                {row.person}
+                              </span>{" "}
+                              — {row.role}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="px-5 py-4">
+                  <ul className="space-y-2 text-sm leading-6 text-black/65">
+                    {section.rows.map((row) => {
+                      const isPersonAward = typeof row === "object";
+
+                      return (
+                        <li
+                          key={
+                            isPersonAward ? `${row.person}-${row.award}` : row
+                          }
+                          className="flex items-start gap-2"
+                        >
+                          <span className="mt-[1px] text-black/30">•</span>
+                          <span>
+                            {isPersonAward ? (
+                              <>
+                                <span className="font-semibold text-black/75">
+                                  {row.person}
+                                </span>{" "}
+                                — {row.award}
+                              </>
+                            ) : (
+                              row
+                            )}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+            </section>
           ))}
         </div>
       </section>
