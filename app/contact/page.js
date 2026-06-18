@@ -1,4 +1,5 @@
 import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
 
 const items = [
   { title: "Official Contact", description: "Content pending." },
@@ -43,6 +44,7 @@ export default function ContactPage() {
           ))}
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }

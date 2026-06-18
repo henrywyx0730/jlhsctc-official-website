@@ -1,4 +1,5 @@
 import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
 
 const items = [
   { title: "Club Events", description: "Content pending." },
@@ -43,6 +44,7 @@ export default function EventsPage() {
           ))}
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }

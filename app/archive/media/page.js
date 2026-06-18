@@ -1,4 +1,5 @@
 import SiteHeader from "../../components/SiteHeader";
+import SiteFooter from "../../components/SiteFooter";
 
 export default function ArchiveMediaPage() {
   return (
@@ -15,6 +16,7 @@ export default function ArchiveMediaPage() {
           be added here.
         </p>
       </section>
+      <SiteFooter />
     </main>
   );
 }

@@ -1,4 +1,5 @@
 import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
 
 const items = [
   { title: "Team Awards", description: "Content pending." },
@@ -43,6 +44,7 @@ export default function AwardsPage() {
           ))}
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }

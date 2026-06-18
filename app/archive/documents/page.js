@@ -1,4 +1,5 @@
 import SiteHeader from "../../components/SiteHeader";
+import SiteFooter from "../../components/SiteFooter";
 
 const documents = [
   {
@@ -67,6 +68,7 @@ export default function ArchiveDocumentsPage() {
           ))}
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }

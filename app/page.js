@@ -1,4 +1,5 @@
 import SiteHeader from "./components/SiteHeader";
+import SiteFooter from "./components/SiteFooter";
 
 function SectionBox({ eyebrow, title, children }) {
   return (
@@ -85,9 +86,7 @@ export default function Home() {
         </SectionBox>
       </section>
 
-      <footer className="border-t border-[#d0d7de] px-6 py-6 text-center text-sm text-black/45">
-        Critical Thinking Club Official Website · Content pending
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

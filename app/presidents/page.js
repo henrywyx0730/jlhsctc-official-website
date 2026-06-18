@@ -1,4 +1,5 @@
 import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
 
 const presidentTerms = [
   {
@@ -170,6 +171,7 @@ export default function PresidentsPage() {
           ))}
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }
