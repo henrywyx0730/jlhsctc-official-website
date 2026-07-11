@@ -8,26 +8,43 @@ const awardSections = [
       "2023 PPMT Summer Tournament Team 6th Place",
       "2024 NUMT Summer Tournament Team Champion",
       "2025 NUMT Winter Tournament Team 4th Place",
+      "2026 NUMT Summer Tournament Team Champion",
     ],
   },
   {
     title: "Individual Awards",
     rows: [
       {
-        person: "Henry Wu",
+        person: "Henry Wu (吴昱贤)",
         award: "2023 NUMT Summer Tournament Outstanding Attorney",
       },
       {
-        person: "Henry Wu",
+        person: "Henry Wu (吴昱贤)",
         award: "2024 NUMT Summer Tournament Outstanding Attorney",
       },
       {
-        person: "Lucy Liu",
+        person: "Lucy Liu (刘美忱)",
         award: "2024 NUMT Summer Tournament Outstanding Witness",
       },
       {
-        person: "Lucy Liu",
+        person: "Leah Zhuang (庄子慧)",
+        award: "2025 NUMT Winter Tournament Outstanding Attorney",
+      },
+      {
+        person: "Lucy Liu (刘美忱)",
         award: "2025 PPMT Summer Tournament Outstanding Attorney",
+      },
+      {
+        person: "Azalea Li (李熙蓓)",
+        award: "2026 NUMT Summer Tournament Outstanding Witness",
+      },
+      {
+        person: "Michelle Luan (栾雨诺)",
+        award: "2026 NUMT Summer Tournament Outstanding Witness",
+      },
+      {
+        person: "Rebecca Gai (盖偲嘉)",
+        award: "2026 NUMT Summer Tournament Outstanding Attorney",
       },
     ],
   },
@@ -37,17 +54,17 @@ const awardSections = [
       {
         title: "2023 TEDx Youth@JLHS",
         rows: [
-          { person: "Henry Wu", role: "Speaker" },
-          { person: "Lucy Liu", role: "Host" },
-          { person: "Coco Hu", role: "Speaker; Event Manager" },
+          { person: "Henry Wu (吴昱贤)", role: "Speaker" },
+          { person: "Lucy Liu (刘美忱)", role: "Host" },
+          { person: "Coco Hu (胡可萱)", role: "Speaker; Event Manager" },
         ],
       },
       {
         title: "2024–2025 TEDx Youth@JLHS",
         rows: [
-          { person: "Coco Hu", role: "Executive Officer" },
-          { person: "Henry Wu", role: "Curator" },
-          { person: "Lucy Liu", role: "Speaker" },
+          { person: "Coco Hu (胡可萱)", role: "Executive Officer" },
+          { person: "Henry Wu (吴昱贤)", role: "Curator" },
+          { person: "Lucy Liu (刘美忱)", role: "Speaker" },
         ],
       },
     ],
