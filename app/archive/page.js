@@ -15,6 +15,13 @@ const archiveSections = [
     status: "2 files",
   },
   {
+    title: "Official Statements",
+    href: "/archive/official-statements",
+    description:
+      "Formal statements and organizational notices published by the Critical Thinking Club.",
+    status: "1 statement",
+  },
+  {
     title: "Media",
     href: "/archive/media",
     description: "Photos, videos, posters, and visual records from club activities.",
