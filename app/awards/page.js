@@ -7,7 +7,7 @@ const awardSections = [
     rows: [
       "2023 PPMT Summer Tournament Team 6th Place",
       "2024 NUMT Summer Tournament Team Champion",
-      "2025 NUMT Winter Tournament Team 4th Place",
+      "2025 NUMT Winter Tournament Team 3rd Place",
       "2026 NUMT Summer Tournament Team Champion",
     ],
   },
@@ -17,6 +17,10 @@ const awardSections = [
       {
         person: "Henry Wu (吴昱贤)",
         award: "2023 NUMT Summer Tournament Outstanding Attorney",
+      },
+      {
+        person: "Coco Hu (胡可萱)",
+        award: "2023 NUMT Summer Tournament Outstanding Witness Honorable Mention",
       },
       {
         person: "Henry Wu (吴昱贤)",
