@@ -4,6 +4,33 @@ import SiteFooter from "../components/SiteFooter";
 
 const presidentTerms = [
   {
+    year: "2026–2027",
+    description:
+      "The 2026–2027 leadership team of the Critical Thinking Club.",
+    members: [
+      {
+        name: "Azalea Li",
+        chineseName: "李熙蓓",
+        role: "President",
+        education: "ZMB Class of 2028",
+        achievements: [
+          "2026 NUMT Summer Tournament Team Champion",
+          "2026 NUMT Summer Tournament Outstanding Witness",
+        ],
+      },
+      {
+        name: "George Tian",
+        chineseName: "天湙",
+        role: "President",
+        education: "ZMB Class of 2028",
+        image: "/president-profiles/george-tian.jpg",
+        imageWidth: 1279,
+        imageHeight: 1706,
+        achievements: ["2026 NUMT Summer Tournament Team Champion"],
+      },
+    ],
+  },
+  {
     year: "2025–2026",
     description:
       "The 2025–2026 leadership team of the Critical Thinking Club.",
@@ -149,9 +176,15 @@ function ProfileRow({ person }) {
           <p className="mt-3 text-sm leading-6 text-black/55">
             {person.education}
           </p>
-          <p className="mt-4 text-sm leading-7 text-black/70">
-            {person.bio}
-          </p>
+          {person.bio ? (
+            <p className="mt-4 text-sm leading-7 text-black/70">
+              {person.bio}
+            </p>
+          ) : (
+            <p className="mt-4 text-sm leading-7 text-black/55">
+              Biography pending.
+            </p>
+          )}
 
           <div className="mt-5">
             <p className="mb-3 text-sm font-semibold text-black/70">

@@ -2,6 +2,29 @@ import Image from "next/image";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 
+const currentPresidents = [
+  {
+    name: "Azalea Li",
+    chineseName: "李熙蓓",
+    role: "President",
+    education: "ZMB Class of 2028",
+    achievements: [
+      "2026 NUMT Summer Tournament Team Champion",
+      "2026 NUMT Summer Tournament Outstanding Witness",
+    ],
+  },
+  {
+    name: "George Tian",
+    chineseName: "天湙",
+    role: "President",
+    education: "ZMB Class of 2028",
+    image: "/president-profiles/george-tian.jpg",
+    imageWidth: 1279,
+    imageHeight: 1706,
+    achievements: ["2026 NUMT Summer Tournament Team Champion"],
+  },
+];
+
 function SectionBox({ eyebrow, title, children }) {
   return (
     <section className="overflow-hidden rounded-xl border border-[#d0d7de] bg-white">
@@ -10,6 +33,56 @@ function SectionBox({ eyebrow, title, children }) {
       </div>
       <div className="p-5">{children}</div>
     </section>
+  );
+}
+
+function CurrentPresidentCard({ president }) {
+  return (
+    <article className="w-full max-w-sm rounded-lg border border-[#d0d7de] bg-white p-4">
+      {president.image ? (
+        <div className="relative h-56 overflow-hidden rounded-lg border border-[#d0d7de] bg-[#f6f8fa]">
+          <Image
+            src={president.image}
+            alt={`${president.name} profile photo`}
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="h-full w-full object-cover object-[center_25%]"
+          />
+        </div>
+      ) : (
+        <div className="flex h-56 items-center justify-center rounded-lg border border-dashed border-[#d0d7de] bg-[#f6f8fa]">
+          <span className="text-sm text-black/45">Profile image pending</span>
+        </div>
+      )}
+
+      <div className="mt-4">
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="rounded-full border border-[#d0d7de] bg-[#f6f8fa] px-2.5 py-1 text-xs font-medium text-black/65">
+            {president.role}
+          </span>
+          <h3 className="text-2xl font-semibold">{president.name}</h3>
+          <span className="text-base text-black/50">{president.chineseName}</span>
+        </div>
+
+        <p className="mt-3 text-sm leading-6 text-black/55">
+          {president.education}
+        </p>
+
+        <div className="mt-4">
+          <p className="mb-3 text-sm font-semibold text-black/70">
+            Selected Achievements
+          </p>
+          <ul className="space-y-1.5 text-sm leading-6 text-black/65">
+            {president.achievements.map((achievement) => (
+              <li key={achievement} className="flex items-start gap-2">
+                <span className="mt-[1px] text-black/30">•</span>
+                <span>{achievement}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </article>
   );
 }
 
@@ -70,9 +143,10 @@ export default function Home() {
         </SectionBox>
 
         <SectionBox eyebrow="Current Presidents" title="Current Presidents">
-          <div className="rounded-lg border border-dashed border-[#d0d7de] bg-[#f6f8fa] p-5 text-sm leading-7 text-black/60">
-            Current presidents of the Critical Thinking Club will be listed here
-            with names, roles, photos, and short contribution summaries.
+          <div className="mx-auto grid max-w-3xl justify-items-center gap-5 md:grid-cols-2">
+            {currentPresidents.map((president) => (
+              <CurrentPresidentCard key={president.name} president={president} />
+            ))}
           </div>
         </SectionBox>
 
