@@ -4,6 +4,27 @@ import SiteFooter from "../components/SiteFooter";
 
 const presidentTerms = [
   {
+    year: "2025–2026",
+    description:
+      "The 2025–2026 leadership team of the Critical Thinking Club.",
+    members: [
+      {
+        name: "Michelle Wei",
+        chineseName: "魏明萱",
+        role: "President",
+        education: "ZMB Class of 2027",
+        image: "/president-profiles/michelle-wei.jpg",
+        imageWidth: 960,
+        imageHeight: 1440,
+        bio: "Michelle Wei served as President of the Critical Thinking Club during the 2025–2026 academic year. Together with Ivanna Hua, she launched the club’s first inter-school mock trial competition in partnership with the NSFZ IB Department. During her time at ZMB, she actively participated in NUMT and PPMT as a team member while taking a leading role in public activities and club development, including TEDx Youth@JLHS 2026, inter-club debates, and the CTC Online Archive.",
+        achievements: [
+          "2025 NUMT Winter Tournament Team 3rd Place",
+          "2026 TEDx Youth@JLHS Organizer",
+        ],
+      },
+    ],
+  },
+  {
     year: "2023–2024",
     description:
       "The 2023–2024 leadership team of the Critical Thinking Club.",
@@ -90,13 +111,23 @@ function ProfileRow({ person }) {
     <article className="border-t border-[#d0d7de] p-5">
       <div className="grid gap-5 md:grid-cols-[180px_1fr]">
         {person.image ? (
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-[#d0d7de] bg-[#f6f8fa]">
+          <div
+            className={`relative overflow-hidden rounded-lg border border-[#d0d7de] bg-[#f6f8fa] ${
+              person.imageWidth ? "" : "aspect-[4/3]"
+            }`}
+          >
             <Image
               src={person.image}
               alt={`${person.name} profile photo`}
-              fill
+              {...(person.imageWidth
+                ? { width: person.imageWidth, height: person.imageHeight }
+                : { fill: true })}
               sizes="(min-width: 768px) 180px, calc(100vw - 72px)"
-              className="h-full w-full object-cover"
+              className={
+                person.imageWidth
+                  ? "h-auto w-full object-contain"
+                  : "h-full w-full object-cover"
+              }
             />
           </div>
         ) : (
