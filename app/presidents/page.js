@@ -125,8 +125,8 @@ const presidentTerms = [
         achievements: [
           "2023 TEDxYouth@JLHS Speaker",
           "2023 NUMT Summer Tournament Outstanding Attorney",
-          "2024 NUMT Summer Tournament Best Attorney",
           "2024 NUMT Summer Tournament Team Champion",
+          "2024 NUMT Summer Tournament Best Attorney",
           "2024–2025 TEDxYouth@JLHS Curator",
         ],
       },
@@ -141,8 +141,8 @@ const presidentTerms = [
         achievements: [
           "2023 TEDxYouth@JLHS Host",
           "2024–2025 TEDxYouth@JLHS Speaker",
-          "2024 NUMT Summer Tournament Best Witness",
           "2024 NUMT Summer Tournament Team Champion",
+          "2024 NUMT Summer Tournament Best Witness",
           "2025 NUMT Winter Tournament Team 3rd Place",
           "2025 PPMT Summer Tournament Outstanding Attorney",
           "2025 UofT Cup Team Champion",
@@ -178,7 +178,7 @@ function AchievementList({ achievements }) {
   }
 
   return (
-    <ul className="grid gap-x-5 gap-y-2 text-sm leading-6 text-black/65 md:grid-cols-2">
+    <ul className="space-y-2 text-sm leading-6 text-black/65">
       {achievements.map((achievement) => (
         <li key={achievement} className="flex gap-2">
           <span className="text-black/30">•</span>
