@@ -24,15 +24,15 @@ const awardSections = [
       },
       {
         person: "Henry Wu (吴昱贤)",
-        award: "2024 NUMT Summer Tournament Outstanding Attorney",
+        award: "2024 NUMT Summer Tournament Best Attorney",
       },
       {
         person: "Lucy Liu (刘美忱)",
-        award: "2024 NUMT Summer Tournament Outstanding Witness",
+        award: "2024 NUMT Summer Tournament Best Witness",
       },
       {
         person: "Leah Zhuang (庄子慧)",
-        award: "2025 NUMT Winter Tournament Outstanding Attorney",
+        award: "2025 NUMT Winter Tournament Best Attorney",
       },
       {
         person: "Lucy Liu (刘美忱)",

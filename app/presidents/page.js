@@ -80,11 +80,9 @@ const presidentTerms = [
         achievements: [
           "2023 TEDx Youth@JLHS Speaker",
           "2023 NUMT Summer Tournament Outstanding Attorney",
-          "2024 NUMT Summer Tournament Outstanding Attorney",
+          "2024 NUMT Summer Tournament Best Attorney",
           "2024 NUMT Summer Tournament Team Champion",
           "2024–2025 TEDx Youth@JLHS Curator",
-          "NUMT Organizing Committee Member",
-          "Developer and Maintainer of the NUMT Tabulation System",
         ],
       },
       {
@@ -98,7 +96,7 @@ const presidentTerms = [
         achievements: [
           "2023 TEDx Youth@JLHS Host",
           "2024–2025 TEDx Youth@JLHS Speaker",
-          "2024 NUMT Summer Tournament Outstanding Witness",
+          "2024 NUMT Summer Tournament Best Witness",
           "2024 NUMT Summer Tournament Team Champion",
           "2025 NUMT Winter Tournament Team 3rd Place",
           "2025 PPMT Summer Tournament Outstanding Attorney",
