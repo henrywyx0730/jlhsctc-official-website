@@ -13,6 +13,7 @@ const presidentTerms = [
         chineseName: "李熙蓓",
         role: "President",
         education: "ZMB Class of 2028",
+        image: "/president-profiles/azalea-li.jpg",
         achievements: [
           "2026 NUMT Summer Tournament Team Champion",
           "2026 NUMT Summer Tournament Outstanding Witness",
@@ -44,6 +45,18 @@ const presidentTerms = [
         imageWidth: 960,
         imageHeight: 1440,
         bio: "Michelle Wei served as President of the Critical Thinking Club during the 2025–2026 academic year. Together with Ivanna Hua, she launched the club’s first inter-school mock trial competition in partnership with the NSFZ IB Department. During her time at ZMB, she actively participated in NUMT and PPMT as a team member while taking a leading role in public activities and club development, including TEDx Youth@JLHS 2026, inter-club debates, and the CTC Online Archive.",
+        achievements: [
+          "2025 NUMT Winter Tournament Team 3rd Place",
+          "2026 TEDx Youth@JLHS Organizer",
+        ],
+      },
+      {
+        name: "Ivanna Hua",
+        chineseName: "华艺雯",
+        role: "President",
+        education: "ZMB Class of 2027",
+        image: "/president-profiles/ivanna-hua.jpg",
+        bio: "Ivanna Hua served as President of the Critical Thinking Club during the 2025–2026 academic year. Working alongside Michelle Wei, she co-founded and hosted the inaugural interschool mock trial competition in partnership with the NSFZ IB Department. During her time at ZMB, Ivanna actively participated as a team member in NUMT and the interschool mock trial competition. She also took a leading role in organizing campus events and advancing club development, organizing key projects such as TEDxJLHS Youth 2026, cross club debate tournaments, and the establishment of the official CTC online archive.",
         achievements: [
           "2025 NUMT Winter Tournament Team 3rd Place",
           "2026 TEDx Youth@JLHS Organizer",

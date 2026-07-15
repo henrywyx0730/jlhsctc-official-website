@@ -8,6 +8,7 @@ const currentPresidents = [
     chineseName: "李熙蓓",
     role: "President",
     education: "ZMB Class of 2028",
+    image: "/president-profiles/azalea-li.jpg",
     achievements: [
       "2026 NUMT Summer Tournament Team Champion",
       "2026 NUMT Summer Tournament Outstanding Witness",
