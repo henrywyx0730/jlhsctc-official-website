@@ -10,6 +10,7 @@ const navItems = [
   { label: "Presidents", href: "/presidents" },
   { label: "Archive", href: "/archive" },
   { label: "Achievements", href: "/achievements" },
+  { label: "TEDx", href: "/tedx" },
   { label: "Events", href: "/events" },
   { label: "Members", href: "/members" },
   { label: "Contact", href: "/contact" },
