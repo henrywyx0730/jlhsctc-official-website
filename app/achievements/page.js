@@ -290,10 +290,7 @@ export default function AchievementsPage() {
       <SiteHeader />
 
       <section className="mx-auto max-w-6xl px-6 py-12">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a783e]">
-          Critical Thinking Club
-        </p>
-        <h1 className="mt-3 font-display text-5xl font-semibold tracking-tight md:text-7xl">
+        <h1 className="mt-0 font-display text-5xl font-semibold tracking-tight md:text-7xl">
           Achievements
         </h1>
         <p className="mt-5 max-w-3xl text-base leading-7 text-black/65">
