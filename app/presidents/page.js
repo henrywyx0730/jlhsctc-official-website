@@ -76,12 +76,12 @@ const presidentTerms = [
         education: "ZMB Class of 2026 · University of Oxford Class of 2030",
         bio: "Leah Zhuang served as President of the Critical Thinking Club during the 2024–2025 academic year, leading the development of the club’s internal training initiatives. In 2025, she also took the lead in organizing TEDxYouth@JLHS and secured financial support from the school for the event. Through her leadership, she fostered thoughtful discussion and intellectual curiosity within the club and beyond.",
         achievements: [
-          "2024 TEDxYouth@JLHS Speaker",
           "2025 TEDxYouth@JLHS Chief Organizer",
           "2025 TEDxYouth@JLHS Curator",
-          "2024 NUMT Summer Tournament Team Champion",
           "2025 NUMT Winter Tournament Team 3rd Place",
           "2025 NUMT Winter Tournament Best Attorney",
+          "2024 TEDxYouth@JLHS Speaker",
+          "2024 NUMT Summer Tournament Team Champion",
         ],
       },
       {
@@ -89,8 +89,14 @@ const presidentTerms = [
         chineseName: "栾雨诺",
         role: "Co-President",
         education: "ZMB Class of 2026 · University of California, Los Angeles Class of 2030",
+        image: "/president-profiles/michelle-luan.jpg",
+        imageWidth: 853,
+        imageHeight: 609,
+        bio: "Michelle Luan served as Co-President of the Critical Thinking Club during the 2024–2025 academic year, promoting critical thinking within the club and the ZMB community through public speaking and debate initiatives. She founded and hosted the ZMB Debate Competition in 2024, organized an inter-school debate event, and served as an organizer for TEDxYouth@JLHS. Through these initiatives, she expanded opportunities for students to engage in structured discussion, argumentation, and intellectual exchange beyond the club.",
         achievements: [
-          "2024 NUMT Summer Tournament Team Champion",
+          "2024 ZMB Debate Competition Founder & Host",
+          "2024 Inter-school Debate Event Organizer",
+          "2025 TEDxYouth@JLHS Organizer",
           "2026 NUMT Summer Tournament Team Champion",
           "2026 NUMT Summer Tournament Outstanding Witness",
         ],
@@ -223,7 +229,7 @@ function ProfileRow({ person }) {
           <div
             className={`relative overflow-hidden rounded-lg border border-[#d0d7de] bg-[#f6f8fa] ${
               person.imageWidth ? "" : "aspect-[4/3]"
-            }`}
+            } ${person.name === "Michelle Luan" ? "self-start" : ""}`}
           >
             <Image
               src={person.image}

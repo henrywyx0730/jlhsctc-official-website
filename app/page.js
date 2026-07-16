@@ -26,6 +26,13 @@ const currentPresidents = [
   },
 ];
 
+const frontOfficeMembers = [
+  "Yuxian Wu (吴昱贤)",
+  "Leah Zhuang (庄子慧)",
+  "Lucy Liu (刘美忱)",
+  "Michelle Luan (栾雨诺)",
+];
+
 function SectionBox({ eyebrow, title, children }) {
   return (
     <section className="overflow-hidden rounded-xl border border-[#d0d7de] bg-white">
@@ -151,24 +158,65 @@ export default function Home() {
           </div>
         </SectionBox>
 
-        <SectionBox eyebrow="School" title="Jinling High School ZMB">
-          <div className="grid gap-5 md:grid-cols-[1fr_auto] md:items-start">
-            <div className="space-y-3 text-sm leading-7 text-black/70">
-              <p>Nanjing Jinling High School, Xinjiekou Campus</p>
-              <p>No. 169 Zhongshan Road, Nanjing, Jiangsu, China</p>
+        <SectionBox eyebrow="Front Office" title="Front Office">
+          <div className="space-y-5 text-sm leading-7 text-black/70">
+            <p>
+              Established in 2026, the Front Office serves as a collaborative
+              leadership body dedicated to supporting the long-term development,
+              continuity, and institutional initiatives of the Critical Thinking
+              Club.
+            </p>
+            <ul className="grid gap-x-8 gap-y-3 border-t border-[#d0d7de] pt-4 sm:grid-cols-2">
+              {frontOfficeMembers.map((member) => (
+                <li key={member} className="font-medium text-black/80">
+                  {member}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </SectionBox>
+
+        <SectionBox eyebrow="Location" title="Location">
+          <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-start">
+            <div className="space-y-5 text-sm leading-7 text-black/70">
+              <div>
+                <p className="text-lg font-semibold text-black/85">
+                  Jinling High School ZMB
+                </p>
+                <p className="text-lg font-semibold text-black/85">
+                  UCLA Global Classroom
+                </p>
+                <p className="mt-1 text-black/55">Xinjiekou Campus</p>
+              </div>
+              <address className="not-italic text-black/65">
+                <p>No. 169 Zhongshan Road</p>
+                <p>Xuanwu District</p>
+                <p>Nanjing, Jiangsu, China</p>
+              </address>
               <p>
                 The Critical Thinking Club is based in Jinling High School ZMB
                 UCLA Global Classroom.
               </p>
             </div>
-            <a
-              href="https://uri.amap.com/marker?position=118.782026,32.048293&name=%E9%87%91%E9%99%B5%E4%B8%AD%E5%AD%A6%28%E6%96%B0%E8%A1%97%E5%8F%A3%E6%A0%A1%E5%8C%BA%29&src=jlhsctc&coordinate=gaode&callnative=0"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex rounded-md border border-[#d0d7de] bg-[#f6f8fa] px-4 py-2 text-sm font-medium text-black/75 hover:bg-white"
-            >
-              Open in Amap
-            </a>
+
+            <div className="md:flex md:flex-col md:items-end">
+              <div className="aspect-[3/2] w-full max-w-[420px] overflow-hidden rounded-lg border border-[#d0d7de] bg-[#f6f8fa]">
+                <iframe
+                  title="Map showing Jinling High School Xinjiekou Campus"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=118.775%2C32.043%2C118.789%2C32.053&layer=mapnik&marker=32.048293%2C118.782026"
+                  className="h-full w-full border-0"
+                  loading="lazy"
+                />
+              </div>
+              <a
+                href="https://uri.amap.com/marker?position=118.782026,32.048293&name=%E9%87%91%E9%99%B5%E4%B8%AD%E5%AD%A6%28%E6%96%B0%E8%A1%97%E5%8F%A3%E6%A0%A1%E5%8C%BA%29&src=jlhsctc&coordinate=gaode&callnative=0"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex self-end text-sm font-medium text-black/70 underline decoration-[#d0d7de] underline-offset-4 hover:text-black"
+              >
+                Open in Amap →
+              </a>
+            </div>
           </div>
         </SectionBox>
       </section>
