@@ -118,7 +118,7 @@ const speakingPeriods = [
 function HonorDivider({ label, className = "mt-5" }) {
   return (
     <div className={className}>
-      <span className="text-xs font-medium uppercase tracking-[0.14em] text-[#9a783e]">
+      <span className="text-xs font-medium text-[#9a783e]">
         {label}
       </span>
     </div>
@@ -226,7 +226,7 @@ function AchievementYear({ year }) {
         <h3 className="font-display text-5xl font-semibold tracking-tight">
           {year.year}
         </h3>
-        <span className="text-xs font-medium uppercase tracking-[0.14em] text-black/40">
+        <span className="text-xs font-medium text-black/40">
           Competition
         </span>
       </div>

@@ -175,7 +175,7 @@ function termId(year) {
 function SectionNavigation({ terms }) {
   return (
     <nav aria-label="President periods">
-      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-black/50">
+      <p className="text-xs font-semibold text-black/50">
         Sections
       </p>
       <ul className="mt-1 flex gap-3 overflow-x-auto pb-1 lg:mt-2 lg:flex-col lg:gap-1 lg:overflow-visible lg:pb-0">
