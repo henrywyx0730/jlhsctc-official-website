@@ -168,6 +168,32 @@ const presidentTerms = [
   },
 ];
 
+function termId(year) {
+  return `presidents-${year.replace("–", "-")}`;
+}
+
+function SectionNavigation({ terms }) {
+  return (
+    <nav aria-label="President periods">
+      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-black/50">
+        Sections
+      </p>
+      <ul className="mt-1 flex gap-3 overflow-x-auto pb-1 lg:mt-2 lg:flex-col lg:gap-1 lg:overflow-visible lg:pb-0">
+        {terms.map((term) => (
+          <li key={term.year} className="shrink-0">
+            <a
+              href={`#${termId(term.year)}`}
+              className="block px-2 py-1 text-sm text-black/65 transition-colors hover:text-black lg:rounded-md lg:px-2 lg:py-2 lg:hover:bg-[#f6f8fa]"
+            >
+              {term.year}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
 function AchievementList({ achievements }) {
   if (!achievements.length) {
     return (
@@ -256,7 +282,7 @@ function ProfileRow({ person }) {
 
 export default function PresidentsPage() {
   return (
-    <main className="min-h-screen bg-white text-[#17130d]">
+    <main className="scroll-smooth min-h-screen bg-white text-[#17130d]">
       <SiteHeader />
 
       <section className="mx-auto max-w-6xl px-6 py-12">
@@ -268,31 +294,44 @@ export default function PresidentsPage() {
           each term&apos;s president and co-presidents.
         </p>
 
-        <div className="mt-10 space-y-10">
-          {presidentTerms.map((term) => (
-            <section
-              key={term.year}
-              className="overflow-hidden rounded-xl border border-[#d0d7de] bg-white"
-            >
-              <div className="border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-4">
-                <div className="flex flex-col justify-between gap-2 md:flex-row md:items-end">
-                  <div>
-                    <p className="text-sm font-semibold text-black/70">
-                      Term
-                    </p>
-                    <h2 className="mt-1 text-2xl font-semibold">{term.year}</h2>
-                  </div>
-                  <p className="max-w-xl text-sm leading-6 text-black/55">
-                    {term.description}
-                  </p>
-                </div>
-              </div>
+        <div className="sticky top-[61px] z-40 -mx-6 border-b border-[#d0d7de] bg-white px-6 py-1 lg:hidden">
+          <SectionNavigation terms={presidentTerms} />
+        </div>
 
-              {term.members.map((person) => (
-                <ProfileRow key={person.name} person={person} />
-              ))}
-            </section>
-          ))}
+        <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_180px]">
+          <div className="space-y-10">
+            {presidentTerms.map((term) => (
+              <section
+                key={term.year}
+                id={termId(term.year)}
+                className="scroll-mt-28 overflow-hidden rounded-xl border border-[#d0d7de] bg-white"
+              >
+                <div className="border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-4">
+                  <div className="flex flex-col justify-between gap-2 md:flex-row md:items-end">
+                    <div>
+                      <p className="text-sm font-semibold text-black/70">
+                        Term
+                      </p>
+                      <h2 className="mt-1 text-2xl font-semibold">{term.year}</h2>
+                    </div>
+                    <p className="max-w-xl text-sm leading-6 text-black/55">
+                      {term.description}
+                    </p>
+                  </div>
+                </div>
+
+                {term.members.map((person) => (
+                  <ProfileRow key={person.name} person={person} />
+                ))}
+              </section>
+            ))}
+          </div>
+
+          <aside className="hidden lg:block">
+            <div className="sticky top-24">
+              <SectionNavigation terms={presidentTerms} />
+            </div>
+          </aside>
         </div>
       </section>
       <SiteFooter />
