@@ -9,7 +9,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "Presidents", href: "/presidents" },
   { label: "Archive", href: "/archive" },
-  { label: "Past Awards", href: "/awards" },
+  { label: "Achievements", href: "/achievements" },
   { label: "Events", href: "/events" },
   { label: "Members", href: "/members" },
   { label: "Contact", href: "/contact" },
