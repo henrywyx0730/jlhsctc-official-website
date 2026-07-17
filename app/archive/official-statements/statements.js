@@ -2,7 +2,7 @@ export const statements = [
   {
     slug: "collective-legacy-and-authorized-use",
     date: "July 15, 2026",
-    title: "Official Statement on CTC Management Transition and Core Project Continuity",
+    title: "Official Statement on CTC Management Transition and Project Continuity",
     excerpt:
       "A statement regarding the collective ownership and authorized use of CTC achievements, partnerships, and branding assets.",
     body:

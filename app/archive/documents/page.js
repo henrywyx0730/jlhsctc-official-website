@@ -25,7 +25,7 @@ export default function ArchiveDocumentsPage() {
           <span>/</span>
           <span>Documents</span>
         </div>
-        <h1 className="mt-3 text-5xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
           Documents
         </h1>
         <p className="mt-5 max-w-3xl text-base leading-7 text-black/65">
