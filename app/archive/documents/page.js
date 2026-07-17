@@ -33,36 +33,39 @@ export default function ArchiveDocumentsPage() {
           Thinking Club.
         </p>
 
-        <div className="mt-10 overflow-hidden rounded-xl border border-[#d0d7de] bg-white">
-          <div className="grid grid-cols-[1fr_auto] border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-3 text-sm font-semibold text-black/65">
-            <span>Name</span>
-            <span>Action</span>
-          </div>
-
-          {documents.map((doc, index) => (
+        <div className="mt-10 border-t border-[#d0d7de] bg-white">
+          {documents.map((doc) => (
             <a
               key={doc.href}
               href={doc.href}
               target="_blank"
               rel="noreferrer"
-              className={`grid grid-cols-[1fr_auto] gap-6 px-5 py-4 hover:bg-[#f6f8fa] ${
-                index !== documents.length - 1 ? "border-b border-[#d0d7de]" : ""
-              }`}
+              className="flex flex-col gap-4 border-b border-[#d0d7de] px-5 py-5 transition-colors last:border-b-0 hover:bg-[#f6f8fa] sm:flex-row sm:items-center sm:justify-between sm:gap-6"
             >
-              <div className="min-w-0">
-                <div className="flex items-center gap-3">
-                  <span className="text-lg">📄</span>
-                  <span className="truncate text-base font-semibold">
-                    {doc.title}
-                  </span>
+              <div className="flex min-w-0 items-start gap-3">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="mt-0.5 h-5 w-5 shrink-0 text-black/45"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                >
+                  <path d="M6.5 3.5h7l4 4v13h-11z" />
+                  <path d="M13.5 3.5v4h4M9 12h6M9 16h6" />
+                </svg>
+                <div className="min-w-0">
+                  <h2 className="text-base font-semibold">
+                    {doc.title.replace(/\.pdf$/i, "")}
+                  </h2>
+                  <p className="mt-1 text-sm leading-6 text-black/55">
+                    {doc.description}
+                  </p>
                 </div>
-                <p className="mt-1 pl-9 text-sm leading-6 text-black/55">
-                  {doc.description}
-                </p>
               </div>
 
-              <span className="self-center rounded-md border border-[#d0d7de] bg-[#f6f8fa] px-2.5 py-1 text-sm font-medium text-black/60">
-                Open
+              <span className="whitespace-nowrap text-sm font-medium text-black/60 sm:shrink-0">
+                View PDF <span aria-hidden="true">→</span>
               </span>
             </a>
           ))}

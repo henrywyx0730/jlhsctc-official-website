@@ -7,12 +7,10 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Presidents", href: "/presidents" },
-  { label: "Archive", href: "/archive" },
   { label: "Achievements", href: "/achievements" },
+  { label: "Presidents", href: "/presidents" },
   { label: "TEDx", href: "/tedx" },
-  { label: "Events", href: "/events" },
-  { label: "Members", href: "/members" },
+  { label: "Archive", href: "/archive" },
   { label: "Contact", href: "/contact" },
 ];
 

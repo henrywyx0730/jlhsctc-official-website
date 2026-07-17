@@ -35,9 +35,9 @@ const frontOfficeMembers = [
 
 function SectionBox({ eyebrow, title, children }) {
   return (
-    <section className="overflow-hidden rounded-xl border border-[#d0d7de] bg-white">
+    <section className="overflow-hidden rounded-lg border border-[#d0d7de] bg-white">
       <div className="border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-4">
-        <h2 className="mt-1 text-2xl font-semibold">{title}</h2>
+        <h2 className="mt-1 font-serif text-2xl font-semibold tracking-tight">{title}</h2>
       </div>
       <div className="p-5">{children}</div>
     </section>
@@ -102,7 +102,7 @@ export default function Home() {
       <section className="border-b border-[#d0d7de] bg-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <h1 className="mt-3 text-5xl font-semibold tracking-tight md:text-6xl">
+            <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
               Critical Thinking Club
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-black/65">
@@ -112,7 +112,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="rounded-xl border border-[#d0d7de] bg-[#f6f8fa] p-5">
+          <div className="rounded-lg border border-[#d0d7de] bg-[#f6f8fa] p-5">
             <div className="flex aspect-[4/3] items-center justify-center rounded-lg border border-[#d0d7de] bg-white p-8">
               <Image
                 src="/images/ctc-logo.png"

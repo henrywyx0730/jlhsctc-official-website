@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #17130d;
   --font-sans: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: var(--font-sans);
 }
 
 html {
@@ -14,6 +15,16 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+/*
+ * Typography foundation:
+ * body, navigation, metadata, and default headings use --font-sans.
+ * font-display is an intentional editorial hook and currently defaults to the
+ * same sans-serif system until a page-specific display face is introduced.
+ */
+.font-display {
+  font-family: var(--font-display);
 }
 
 a {

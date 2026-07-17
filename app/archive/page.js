@@ -3,29 +3,25 @@ import SiteFooter from "../components/SiteFooter";
 
 const archiveSections = [
   {
-    title: "Articles",
-    href: "/archive/articles",
-    description: "Club writings, reflections, reviews, and article-style records.",
-    status: "Content pending",
-  },
-  {
     title: "Documents",
     href: "/archive/documents",
     description: "Official documents, reference materials, guides, and PDFs.",
-    status: "2 files",
   },
   {
     title: "Official Statements",
     href: "/archive/official-statements",
     description:
       "Formal statements and organizational notices published by the Critical Thinking Club.",
-    status: "1 statement",
+  },
+  {
+    title: "Articles",
+    href: "/archive/articles",
+    description: "Club writings, reflections, reviews, and article-style records.",
   },
   {
     title: "Media",
     href: "/archive/media",
     description: "Photos, videos, posters, and visual records from club activities.",
-    status: "Content pending",
   },
 ];
 
@@ -35,36 +31,31 @@ export default function ArchivePage() {
       <SiteHeader />
 
       <section className="mx-auto max-w-6xl px-6 py-12">
-        <h1 className="mt-3 text-5xl font-semibold tracking-tight md:text-6xl">
-          Club Archive
+        <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
+          Archive
         </h1>
         <p className="mt-5 max-w-3xl text-base leading-7 text-black/65">
-          Club records, documents, media, and historical materials are organized
-          into archive sections.
+          A collection of Critical Thinking Club historical records, documents,
+          official statements, media, and preserved materials.
         </p>
 
-        <div className="mt-10 overflow-hidden rounded-xl border border-[#d0d7de] bg-white">
-          <div className="grid grid-cols-[1fr_auto] border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-3 text-sm font-semibold text-black/65">
-            <span>Archive Section</span>
-            <span>Status</span>
-          </div>
-
-          {archiveSections.map((section, index) => (
+        <div className="mt-10 border-t border-[#d0d7de]">
+          {archiveSections.map((section) => (
             <a
               key={section.href}
               href={section.href}
-              className={`grid grid-cols-[1fr_auto] gap-4 px-5 py-4 hover:bg-[#f6f8fa] ${
-                index !== archiveSections.length - 1 ? "border-b border-[#d0d7de]" : ""
-              }`}
+              className="flex flex-col gap-4 border-b border-[#d0d7de] py-6 transition-colors hover:bg-[#f6f8fa] sm:flex-row sm:items-center sm:justify-between sm:gap-8"
             >
-              <div>
-                <h2 className="text-base font-semibold">{section.title}</h2>
-                <p className="mt-1 text-sm leading-6 text-black/55">
+              <div className="min-w-0">
+                <h2 className="font-serif text-2xl font-normal tracking-tight text-black/90">
+                  {section.title}
+                </h2>
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-black/55">
                   {section.description}
                 </p>
               </div>
-              <span className="self-center rounded-md border border-[#d0d7de] bg-[#f6f8fa] px-2.5 py-1 text-xs text-black/55">
-                {section.status}
+              <span className="whitespace-nowrap text-sm font-medium text-black/60 sm:shrink-0">
+                View collection <span aria-hidden="true">→</span>
               </span>
             </a>
           ))}

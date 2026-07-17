@@ -74,6 +74,9 @@ const presidentTerms = [
         chineseName: "庄子慧",
         role: "President",
         education: "ZMB Class of 2026 · University of Oxford Class of 2030",
+        image: "/president-profiles/leah-zhuang.jpg",
+        imageWidth: 1440,
+        imageHeight: 960,
         bio: "Leah Zhuang served as President of the Critical Thinking Club during the 2024–2025 academic year, leading the development of the club’s internal training initiatives. In 2025, she also took the lead in organizing TEDxYouth@JLHS and secured financial support from the school for the event. Through her leadership, she fostered thoughtful discussion and intellectual curiosity within the club and beyond.",
         achievements: [
           "2025 TEDxYouth@JLHS Chief Organizer",
@@ -252,13 +255,13 @@ function ProfileRow({ person }) {
 
         <div>
           <div className="flex flex-wrap items-center gap-3">
-            <span className="rounded-full border border-[#d0d7de] bg-[#f6f8fa] px-2.5 py-1 text-xs font-medium text-black/65">
-              {person.role}
-            </span>
-            <h3 className="text-2xl font-semibold">{person.name}</h3>
+            <h3 className="text-3xl font-semibold tracking-tight">{person.name}</h3>
             {person.chineseName && (
               <span className="text-base text-black/50">{person.chineseName}</span>
             )}
+            <span className="text-sm font-medium text-black/50">
+              {person.role}
+            </span>
           </div>
 
           <p className="mt-3 text-sm leading-6 text-black/55">
@@ -275,7 +278,7 @@ function ProfileRow({ person }) {
           )}
 
           <div className="mt-5">
-            <p className="mb-3 text-sm font-semibold text-black/70">
+            <p className="mb-3 font-serif text-lg font-semibold tracking-tight text-black/75">
               Selected Achievements
             </p>
             <AchievementList achievements={person.achievements} />
@@ -292,8 +295,8 @@ export default function PresidentsPage() {
       <SiteHeader />
 
       <section className="mx-auto max-w-6xl px-6 py-12">
-        <h1 className="mt-3 text-5xl font-semibold tracking-tight md:text-6xl">
-          Past Presidents of the Club
+        <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
+          Presidents
         </h1>
         <p className="mt-5 max-w-5xl text-base leading-7 text-black/65">
           Profiles are organized by academic year and leadership role, preserving
@@ -310,15 +313,17 @@ export default function PresidentsPage() {
               <section
                 key={term.year}
                 id={termId(term.year)}
-                className="scroll-mt-28 overflow-hidden rounded-xl border border-[#d0d7de] bg-white"
+                className="scroll-mt-28 border-t border-[#d0d7de] pt-8 first:border-t-0 first:pt-0"
               >
-                <div className="border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-4">
+                <div className="pb-4">
                   <div className="flex flex-col justify-between gap-2 md:flex-row md:items-end">
                     <div>
                       <p className="text-sm font-semibold text-black/70">
                         Term
                       </p>
-                      <h2 className="mt-1 text-2xl font-semibold">{term.year}</h2>
+                      <h2 className="mt-1 font-serif text-3xl font-normal tracking-tight text-black/90">
+                        {term.year}
+                      </h2>
                     </div>
                     <p className="max-w-xl text-sm leading-6 text-black/55">
                       {term.description}

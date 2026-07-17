@@ -30,32 +30,20 @@ export default function OfficialStatementsPage() {
           {officialStatementsDescription}
         </p>
 
-        <div className="mt-10 overflow-hidden rounded-lg border border-[#d0d7de] bg-white">
-          <div className="grid grid-cols-[1fr_auto] gap-4 border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-3 text-sm font-semibold text-black/65">
-            <span>Statement</span>
-            <span>Action</span>
-          </div>
-
-          {statements.map((statement, index) => (
+        <div className="mt-10 border-t border-[#d0d7de] bg-white">
+          {statements.map((statement) => (
             <a
               key={statement.slug}
               href={`/archive/official-statements/${statement.slug}`}
-              className={`grid grid-cols-[minmax(0,1fr)_auto] gap-4 px-5 py-4 hover:bg-[#f6f8fa] ${
-                index !== statements.length - 1
-                  ? "border-b border-[#d0d7de]"
-                  : ""
-              }`}
+              className="flex flex-col gap-4 border-b border-[#d0d7de] px-0 py-5 transition-colors hover:bg-[#f6f8fa] sm:flex-row sm:items-center sm:justify-between"
             >
               <div className="min-w-0">
                 <p className="text-sm text-black/50">{statement.date}</p>
-                <h2 className="mt-1 text-base font-semibold">
+                <h2 className="mt-1 font-serif text-lg font-semibold tracking-tight">
                   {statement.title}
                 </h2>
-                <p className="mt-1 text-sm leading-6 text-black/55">
-                  {statement.excerpt}
-                </p>
               </div>
-              <span className="self-center whitespace-nowrap text-sm font-medium text-black/60">
+              <span className="whitespace-nowrap text-sm font-medium text-black/60 sm:shrink-0">
                 Read statement <span aria-hidden="true">→</span>
               </span>
             </a>

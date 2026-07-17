@@ -26,8 +26,8 @@ export default function CollectiveLegacyAndAuthorizedUsePage() {
             Official Statements
           </a>
         </div>
-        <h1 className="mt-5 text-5xl font-semibold tracking-tight md:text-6xl">
-          {statement.title}
+        <h1 className="mt-5 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
+          Official Statement on CTC Legacy and Authorized Use
         </h1>
         <p className="mt-4 text-sm text-black/50">{statement.date}</p>
 
