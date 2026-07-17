@@ -228,8 +228,8 @@ function ProfileRow({ person }) {
         {person.image ? (
           <div
             className={`relative overflow-hidden rounded-lg border border-[#d0d7de] bg-[#f6f8fa] ${
-              person.imageWidth ? "" : "aspect-[4/3]"
-            } ${person.name === "Michelle Luan" ? "self-start" : ""}`}
+              person.imageWidth ? "self-start" : "aspect-[4/3]"
+            }`}
           >
             <Image
               src={person.image}
