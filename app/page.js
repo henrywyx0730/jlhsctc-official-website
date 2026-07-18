@@ -9,6 +9,8 @@ const currentPresidents = [
     role: "President",
     education: "ZMB Class of 2028",
     image: "/president-profiles/azalea-li.jpg",
+    imageWidth: 1620,
+    imageHeight: 1080,
     achievements: [
       "2026 NUMT Summer Tournament Team Champion",
       "2026 NUMT Summer Tournament Outstanding Witness",
@@ -33,22 +35,43 @@ const frontOfficeMembers = [
   "Michelle Luan (栾雨诺)",
 ];
 
-function SectionBox({ eyebrow, title, children }) {
+const featuredAchievements = [
+  { year: "2026", event: "NUMT Summer Tournament", result: "Team Champion" },
+  { year: "2025", event: "NUMT Winter Tournament", result: "Team 3rd Place" },
+  { year: "2024", event: "NUMT Summer Tournament", result: "Team Champion" },
+];
+
+function EditorialSection({ title, description, href, actionLabel, children }) {
   return (
-    <section className="overflow-hidden rounded-lg border border-[#d0d7de] bg-white">
-      <div className="border-b border-[#d0d7de] bg-[#f6f8fa] px-5 py-4">
-        <h2 className="mt-1 font-serif text-2xl font-semibold tracking-tight">{title}</h2>
+    <section className="border-t border-[#d0d7de] py-12">
+      <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+        <div className="max-w-3xl">
+          <h2 className="font-serif text-3xl font-semibold tracking-tight text-black/90">
+            {title}
+          </h2>
+          {description && (
+            <p className="mt-3 text-base leading-7 text-black/65">{description}</p>
+          )}
+        </div>
+        {href && (
+          <a
+            href={href}
+            className="whitespace-nowrap text-sm font-medium text-black/65 underline decoration-[#d0d7de] underline-offset-4 hover:text-black"
+          >
+            {actionLabel} →
+          </a>
+        )}
       </div>
-      <div className="p-5">{children}</div>
+      {children && <div className="mt-8">{children}</div>}
     </section>
   );
 }
 
 function CurrentPresidentCard({ president }) {
   return (
-    <article className="w-full max-w-sm rounded-lg border border-[#d0d7de] bg-white p-4">
+    <article className="flex h-full w-full flex-col">
       {president.image ? (
-        <div className="relative h-56 overflow-hidden rounded-lg border border-[#d0d7de] bg-[#f6f8fa]">
+        <div className="relative aspect-[4/3] w-full max-w-[260px] overflow-hidden">
           <Image
             src={president.image}
             alt={`${president.name} profile photo`}
@@ -58,23 +81,19 @@ function CurrentPresidentCard({ president }) {
           />
         </div>
       ) : (
-        <div className="flex h-56 items-center justify-center rounded-lg border border-dashed border-[#d0d7de] bg-[#f6f8fa]">
+        <div className="flex aspect-[4/3] w-full max-w-[260px] items-center justify-center">
           <span className="text-sm text-black/45">Profile image pending</span>
         </div>
       )}
 
-      <div className="mt-4">
+      <div className="mt-4 flex flex-1 flex-col text-left">
         <div className="flex flex-wrap items-center gap-3">
-          <span className="rounded-full border border-[#d0d7de] bg-[#f6f8fa] px-2.5 py-1 text-xs font-medium text-black/65">
-            {president.role}
-          </span>
-          <h3 className="text-2xl font-semibold">{president.name}</h3>
+          <h3 className="text-2xl font-semibold tracking-tight">{president.name}</h3>
           <span className="text-base text-black/50">{president.chineseName}</span>
+          <span className="text-sm font-medium text-black/50">{president.role}</span>
         </div>
 
-        <p className="mt-3 text-sm leading-6 text-black/55">
-          {president.education}
-        </p>
+        <p className="mt-3 text-sm leading-6 text-black/55">{president.education}</p>
 
         <div className="mt-4">
           <p className="mb-3 text-sm font-semibold text-black/70">
@@ -100,34 +119,34 @@ export default function Home() {
       <SiteHeader />
 
       <section className="border-b border-[#d0d7de] bg-white">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-28">
           <div>
-            <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
+            <h1 className="font-serif text-5xl font-semibold tracking-tight md:text-7xl">
               Critical Thinking Club
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-black/65">
-              The official website of the Critical Thinking Club, featuring club
-              introduction, presidents, archives, awards, events, and member
-              contributions.
+              The institutional record of the Critical Thinking Club at Jinling
+              High School ZMB: its people, achievements, programs, and history.
             </p>
           </div>
 
-          <div className="rounded-lg border border-[#d0d7de] bg-[#f6f8fa] p-5">
-            <div className="flex aspect-[4/3] items-center justify-center rounded-lg border border-[#d0d7de] bg-white p-8">
-              <Image
-                src="/images/ctc-logo.png"
-                alt="Critical Thinking Club logo"
-                width={320}
-                height={320}
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
+          <div className="flex min-h-64 items-center justify-center md:min-h-72">
+            <Image
+              src="/images/ctc-logo.png"
+              alt="Critical Thinking Club logo"
+              width={320}
+              height={320}
+              className="max-h-64 max-w-full object-contain md:max-h-72"
+            />
           </div>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-6 px-6 py-12">
-        <SectionBox eyebrow="About" title="About the Club">
+      <div className="mx-auto max-w-6xl px-6">
+        <EditorialSection
+          title="About the Club"
+          description="A student-led organization dedicated to discussion, argumentation, public reasoning, and intellectual exchange."
+        >
           <div className="space-y-4 text-sm leading-7 text-black/70">
             <p>
               The Critical Thinking Club is one of the longest-standing student
@@ -141,24 +160,68 @@ export default function Home() {
               encourages members to think clearly, speak persuasively, and
               engage with complex issues from multiple perspectives.
             </p>
-            <p>
-              As part of the ZMB student community, CTC aims to preserve a
-              culture of curiosity, rigor, and open-minded conversation while
-              documenting the club&apos;s history, achievements, and student
-              contributions through this official website.
-            </p>
           </div>
-        </SectionBox>
+        </EditorialSection>
 
-        <SectionBox eyebrow="Current Presidents" title="Current Presidents">
-          <div className="mx-auto grid max-w-3xl justify-items-center gap-5 md:grid-cols-2">
+        <EditorialSection
+          title="Featured Achievements"
+          description="A selection from the club's competition history and record of distinction."
+          href="/achievements"
+          actionLabel="View achievements"
+        >
+          <div className="space-y-3">
+            {featuredAchievements.map((achievement) => (
+              <div
+                key={`${achievement.year}-${achievement.event}`}
+                className="flex items-start gap-3 text-black/80"
+              >
+                <span className="pt-0.5 text-base" aria-hidden="true">
+                  {achievement.result === "Team 3rd Place" ? "🥉" : "🏆"}
+                </span>
+                <span>
+                  <span className="block font-serif text-lg font-semibold tracking-tight">
+                    {achievement.year} {achievement.event}
+                  </span>
+                  <span className="block text-sm text-black/55">
+                    {achievement.result}
+                  </span>
+                </span>
+              </div>
+            ))}
+          </div>
+        </EditorialSection>
+
+        <EditorialSection
+          title="Current Presidents"
+          description="The current leadership of the Critical Thinking Club, organized in the Presidents archive."
+          href="/presidents"
+          actionLabel="View presidents"
+        >
+          <div className="mx-auto grid max-w-2xl gap-8 md:grid-cols-2">
             {currentPresidents.map((president) => (
               <CurrentPresidentCard key={president.name} president={president} />
             ))}
           </div>
-        </SectionBox>
+        </EditorialSection>
 
-        <SectionBox eyebrow="Front Office" title="Front Office">
+        <EditorialSection
+          title="TEDx Youth@JLHS"
+          description="A student-led TEDx platform dedicated to sharing ideas, stories, and perspectives."
+          href="/tedx"
+          actionLabel="View TEDx archive"
+        >
+          <div className="border-l-2 border-[#E62B1E] pl-5">
+            <p className="font-sans text-xl font-semibold tracking-tight text-black/85">
+              Transform, Transcend, Transmit
+            </p>
+            <p className="mt-2 text-sm leading-6 text-black/60">
+              An annual student-led TEDx program founded in 2023 by Jack Lyu
+              (吕嘉涵).
+            </p>
+          </div>
+        </EditorialSection>
+
+        <EditorialSection title="Front Office">
           <div className="space-y-5 text-sm leading-7 text-black/70">
             <p>
               Established in 2026, the Front Office serves as a collaborative
@@ -174,9 +237,9 @@ export default function Home() {
               ))}
             </ul>
           </div>
-        </SectionBox>
+        </EditorialSection>
 
-        <SectionBox eyebrow="Location" title="Location">
+        <EditorialSection title="Location">
           <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-start">
             <div className="space-y-5 text-sm leading-7 text-black/70">
               <div>
@@ -218,8 +281,8 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </SectionBox>
-      </section>
+        </EditorialSection>
+      </div>
 
       <SiteFooter />
     </main>
