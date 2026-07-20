@@ -1,5 +1,10 @@
 export const statements = [
   {
+    slug: "ctc-management-transition-and-future-development",
+    date: "July 20, 2026",
+    title: "Official Statement on CTC Management Transition and Future Development",
+  },
+  {
     slug: "collective-legacy-and-authorized-use",
     date: "July 15, 2026",
     title: "Official Statement on CTC Management Transition and Project Continuity",
