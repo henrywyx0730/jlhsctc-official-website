@@ -10,7 +10,7 @@ const competitionYears = [
         team: "Team Champion",
         individual: [
           {
-            person: "Azalea Li (李熙蓓)",
+            person: "Azalea Lee (李熙蓓)",
             recognition: "Outstanding Witness",
           },
           {

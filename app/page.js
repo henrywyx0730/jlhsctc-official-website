@@ -4,7 +4,7 @@ import SiteFooter from "./components/SiteFooter";
 
 const currentPresidents = [
   {
-    name: "Azalea Li",
+    name: "Azalea Lee",
     chineseName: "李熙蓓",
     role: "President",
     education: "ZMB Class of 2028",

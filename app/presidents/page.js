@@ -9,7 +9,7 @@ const presidentTerms = [
       "The 2026–2027 leadership team of the Critical Thinking Club.",
     members: [
       {
-        name: "Azalea Li",
+        name: "Azalea Lee",
         chineseName: "李熙蓓",
         role: "President",
         education: "ZMB Class of 2028",
