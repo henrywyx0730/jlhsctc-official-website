@@ -66,20 +66,6 @@ function TalkArchiveEntry({ event }) {
         <h3 className="font-display text-2xl font-semibold text-black/85">
           {event.title}
         </h3>
-        <div className="mt-5">
-          <SectionLabel>Theme</SectionLabel>
-          <p className="mt-2 text-sm leading-6 text-black/60">
-            {event.theme || "Theme record pending"}
-          </p>
-        </div>
-
-        <div className="mt-5">
-          <SectionLabel>Event Description</SectionLabel>
-          <p className="mt-2 text-sm leading-6 text-black/60">
-            {event.description || "Event description pending"}
-          </p>
-        </div>
-
         <div className="mt-7">
           <SectionLabel>Talks</SectionLabel>
           <div className="mt-4 space-y-6">
