@@ -26,6 +26,7 @@ export default function StatementRegardingRecentCtcManagementMattersPage() {
         <h1 className="mt-5 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
           Statement Regarding Recent CTC Management Matters
         </h1>
+        <p className="mt-4 text-sm text-black/50">July 24, 2026</p>
 
         <h2 className="mt-10 font-serif text-2xl font-semibold text-black">
           Chinese Original Statement
