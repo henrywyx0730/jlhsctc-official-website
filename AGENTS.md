@@ -57,3 +57,51 @@ For substantial design work:
 - Show the final diff or a focused diff summary when the worktree contains pre-existing changes.
 - State clearly which requested checks were not available or could not be run.
 - Leave commits, pushes, and history changes to the user unless explicitly requested.
+
+<!-- BEGIN PROJECT SKILL ROUTING -->
+### Working Workflow
+
+- Before editing, inspect the relevant files and explain the plan.
+- Work only inside this repository.
+- Keep changes narrowly scoped to the requested task.
+- Do not modify unrelated files.
+- Do not commit, push, tag, or create a release unless explicitly requested.
+- Show the final diff and report verification results.
+- Ask for approval before installing dependencies, running migrations, deleting files, changing environment files, or performing destructive operations.
+- `find-skills` may suggest additional skills, but must not install anything without explicit approval.
+
+### General Skill Routing
+
+- Use the appropriate Superpowers workflow for complex features, architecture, substantial refactors, difficult debugging, database work, and test-driven implementation.
+- Use `systematic-debugging` before proposing speculative fixes.
+- Use `test-driven-development` when changing important logic.
+- Use `writing-plans` for substantial multi-step work.
+- Use `verification-before-completion` before declaring substantial work complete.
+- Do not invoke heavyweight workflows for trivial text, spacing, color, or isolated obvious fixes.
+
+## Project Skill Routing — JLH SCTC Official Website
+
+### Product Boundary
+
+- Treat this as the official public website and historical archive of the Critical Thinking Club.
+- Trust, factual accuracy, institutional consistency, accessibility, and long-term readability come first.
+- Preserve president records, biographies, awards, official statements, archive documents, dates, names, images, and historical wording unless the task explicitly targets them.
+- Never invent club history, achievements, biographies, event results, or leadership records.
+
+### Engineering Skills
+
+- Use Superpowers for substantial route changes, archive systems, content models, data migrations, difficult bugs, and multi-page refactors.
+- Keep changes minimal and preserve existing routes, shared header/footer behavior, official records, and content structure.
+- Content-only tasks must not trigger unrelated redesigns.
+- Design-only tasks must not silently rewrite official content.
+
+### Design Skills
+
+- Use `design-taste-frontend` and `ui-design` for official layout, typography, content hierarchy, responsive behavior, archive presentation, and restrained brand expression.
+- Use `apple-design` only for subtle navigation feedback, disclosure, focus, and natural transitions.
+- Use `find-animation-opportunities` before adding any meaningful motion and `review-animations` afterward.
+- Keep motion and effects more restrained than on a personal portfolio.
+- Avoid startup-style gradients, oversized marketing heroes, excessive glass, playful motion, and admin-dashboard aesthetics.
+- Preserve the clean official or GitHub-like visual language unless a redesign is explicitly approved.
+- Ask for visual approval before changing the primary brand direction, navigation, homepage hero, archive presentation system, or prominent motion.
+<!-- END PROJECT SKILL ROUTING -->
