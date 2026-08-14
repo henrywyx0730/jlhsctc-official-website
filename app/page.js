@@ -24,7 +24,10 @@ const currentPresidents = [
     image: "/president-profiles/george-tian.jpg",
     imageWidth: 1279,
     imageHeight: 1706,
-    achievements: ["2026 NUMT Summer Tournament Team Champion"],
+    achievements: [
+      "2026 NUMT Summer Tournament Team Champion",
+      "2026 TEDxYouth@JLHS Speaker",
+    ],
   },
 ];
 

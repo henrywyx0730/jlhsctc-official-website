@@ -27,7 +27,10 @@ const presidentTerms = [
         image: "/president-profiles/george-tian.jpg",
         imageWidth: 1279,
         imageHeight: 1706,
-        achievements: ["2026 NUMT Summer Tournament Team Champion"],
+        achievements: [
+          "2026 NUMT Summer Tournament Team Champion",
+          "2026 TEDxYouth@JLHS Speaker",
+        ],
       },
     ],
   },
@@ -79,12 +82,12 @@ const presidentTerms = [
         imageHeight: 960,
         bio: "Leah Zhuang served as President of the Critical Thinking Club during the 2024–2025 academic year, leading the development of the club’s internal training initiatives. In 2025, she also took the lead in organizing TEDxYouth@JLHS and secured financial support from the school for the event. Through her leadership, she fostered thoughtful discussion and intellectual curiosity within the club and beyond.",
         achievements: [
+          "2024 TEDxYouth@JLHS Speaker",
+          "2024 NUMT Summer Tournament Team Champion",
           "2025 TEDxYouth@JLHS Chief Organizer",
           "2025 TEDxYouth@JLHS Curator",
           "2025 NUMT Winter Tournament Team 3rd Place",
           "2025 NUMT Winter Tournament Best Attorney",
-          "2024 TEDxYouth@JLHS Speaker",
-          "2024 NUMT Summer Tournament Team Champion",
         ],
       },
       {
@@ -99,6 +102,7 @@ const presidentTerms = [
         achievements: [
           "2024 ZMB Debate Competition Founder & Host",
           "2024 Inter-school Debate Event Organizer",
+          "2024 TEDxYouth@JLHS Speaker",
           "2025 TEDxYouth@JLHS Organizer",
           "2026 NUMT Summer Tournament Team Champion",
           "2026 NUMT Summer Tournament Outstanding Witness",
@@ -149,10 +153,12 @@ const presidentTerms = [
         bio: "Lucy Liu served as Co-President of the Critical Thinking Club during the 2023–2024 academic year, contributing to the club’s public speaking and development initiatives. Her contributions supported CTC’s broader culture of thoughtful discussion and student-led intellectual engagement.",
         achievements: [
           "2023 TEDxYouth@JLHS Host",
+          "2024 TEDxYouth@JLHS Speaker",
           "2024–2025 TEDxYouth@JLHS Speaker",
           "2024 NUMT Summer Tournament Team Champion",
           "2024 NUMT Summer Tournament Best Witness",
           "2025 NUMT Winter Tournament Team 3rd Place",
+          "2025 TEDxYouth@JLHS Speaker",
           "2025 PPMT Summer Tournament Outstanding Attorney",
           "2025 UofT Cup Team Champion",
         ],
