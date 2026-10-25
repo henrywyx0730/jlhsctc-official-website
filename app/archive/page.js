@@ -8,12 +8,6 @@ const archiveSections = [
     description: "Official documents, reference materials, guides, and PDFs.",
   },
   {
-    title: "Official Statements",
-    href: "/archive/official-statements",
-    description:
-      "Formal statements and organizational notices published by the Critical Thinking Club.",
-  },
-  {
     title: "Articles",
     href: "/archive/articles",
     description: "Club writings, reflections, reviews, and article-style records.",
@@ -36,7 +30,7 @@ export default function ArchivePage() {
         </h1>
         <p className="mt-5 max-w-3xl text-base leading-7 text-black/65">
           A collection of Critical Thinking Club historical records, documents,
-          official statements, media, and preserved materials.
+          media, and preserved materials.
         </p>
 
         <div className="mt-10 border-t border-[#d0d7de]">

@@ -2,30 +2,44 @@ import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import { tedxEvents } from "../../src/data/tedxEvents";
 
-const leadershipPeriods = [
+const founder = { person: "Jack Lyu (吕嘉涵)", contribution: "Founder · 2023" };
+
+const leadershipYears = [
   {
-    period: "Founding",
-    entries: [
-      { person: "Jack Lyu (吕嘉涵)", contribution: "Founder · 2023" },
+    year: "2026",
+    roles: [
+      { role: "Event Manager", people: ["Michelle Wei (魏明萱)"] },
+      { role: "Organizers", people: ["Ivanna Hua (华艺雯)"] },
     ],
   },
   {
-    period: "2024–2025 TEDx Youth@JLHS",
-    entries: [
-      { person: "Coco Hu (胡可萱)", contribution: "Executive Officer" },
-      { person: "Henry Wu (吴昱贤)", contribution: "Curator" },
-      { person: "Lucy Liu (刘美忱)", contribution: "Speaker" },
+    year: "2025",
+    roles: [
+      { role: "Event Manager", people: ["Leah Zhuang (庄子慧)"] },
+      { role: "Organizers", people: ["Michelle Luan (栾雨诺)"] },
+      { role: "Multimedia Lead", people: ["Jack Shen (申秋宇)"] },
     ],
   },
   {
-    period: "2023 TEDx Youth@JLHS",
-    entries: [
-      { person: "Henry Wu (吴昱贤)", contribution: "Speaker" },
-      { person: "Lucy Liu (刘美忱)", contribution: "Host" },
+    year: "2024",
+    roles: [
+      { role: "Event Manager", people: ["Coco Hu (胡可萱)"] },
       {
-        person: "Coco Hu (胡可萱)",
-        contribution: "Speaker · Event Manager",
+        role: "Organizers",
+        people: ["Henry Wu (吴昱贤)", "Sean Shen (申晓旻)"],
       },
+      { role: "Multimedia Lead", people: ["Sean Shen (申晓旻)"] },
+    ],
+  },
+  {
+    year: "2023",
+    roles: [
+      { role: "Event Manager", people: ["Jack Lyu (吕嘉涵)"] },
+      {
+        role: "Organizers",
+        people: ["Aurora Ma (马苏阳)", "Krystal Liu (刘熹微)"],
+      },
+      { role: "Multimedia Lead", people: ["Sean Shen (申晓旻)"] },
     ],
   },
 ];
@@ -39,10 +53,6 @@ function SectionLabel({ children }) {
 }
 
 function ArchiveLink({ label, href }) {
-  if (!href) {
-    return <span className="text-[#e62b1e]/65">{label} →</span>;
-  }
-
   return (
     <a
       href={href}
@@ -75,16 +85,22 @@ function TalkArchiveEntry({ event }) {
                 className="border-l-2 border-[#e62b1e]/35 pl-4"
               >
                 <p className="font-display text-lg font-semibold text-black/85">
-                  {talk.speaker || "Speaker name pending"}
+                  {talk.speaker}
                 </p>
                 <p className="mt-1 text-sm leading-6 text-black/60">
-                  {talk.title || "Talk title pending"}
+                  {talk.title}
                 </p>
-                <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm">
-                  <span className="text-black/45">Watch:</span>
-                  <ArchiveLink label="YouTube" href={talk.youtube} />
-                  <ArchiveLink label="Bilibili" href={talk.bilibili} />
-                </div>
+                {(talk.youtube || talk.bilibili) && (
+                  <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm">
+                    <span className="text-black/45">Watch:</span>
+                    {talk.youtube && (
+                      <ArchiveLink label="YouTube" href={talk.youtube} />
+                    )}
+                    {talk.bilibili && (
+                      <ArchiveLink label="Bilibili" href={talk.bilibili} />
+                    )}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -94,25 +110,41 @@ function TalkArchiveEntry({ event }) {
   );
 }
 
-function LeadershipPeriod({ period }) {
+function FounderCredit({ entry }) {
   return (
-    <article className="border-t border-[#d0d7de] py-7 first:border-t-0 first:pt-0">
+    <article className="pb-7">
       <h3 className="font-display text-2xl font-semibold text-black/85">
-        {period.period}
+        Founding
       </h3>
-      <ul className="mt-5 space-y-3 text-sm leading-6">
-        {period.entries.map((entry) => (
-          <li
-            key={`${period.period}-${entry.person}`}
+      <div className="mt-5 flex flex-col gap-0.5 text-sm leading-6 sm:flex-row sm:items-baseline sm:gap-5">
+        <span className="font-display text-base font-semibold text-black/85 sm:min-w-[220px]">
+          {entry.person}
+        </span>
+        <span className="text-black/60">{entry.contribution}</span>
+      </div>
+    </article>
+  );
+}
+
+function LeadershipYear({ entry }) {
+  return (
+    <article className="border-t border-[#d0d7de] py-7">
+      <h3 className="font-display text-2xl font-semibold text-black/85">
+        TEDxYouth@JLHS {entry.year}
+      </h3>
+      <dl className="mt-5 space-y-3 text-sm leading-6">
+        {entry.roles.map((item) => (
+          <div
+            key={`${entry.year}-${item.role}`}
             className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-5"
           >
-            <span className="font-display text-base font-semibold text-black/85 sm:min-w-[220px]">
-              {entry.person}
-            </span>
-            <span className="text-black/60">{entry.contribution}</span>
-          </li>
+            <dt className="text-black/60 sm:min-w-[220px]">{item.role}</dt>
+            <dd className="font-display text-base font-semibold text-black/85">
+              {item.people.join(", ")}
+            </dd>
+          </div>
         ))}
-      </ul>
+      </dl>
     </article>
   );
 }
@@ -164,18 +196,16 @@ export default function TedxPage() {
               label="TEDx Event Page"
               href="https://www.ted.com/tedx/events/67468"
             />
-            <ArchiveLink label="YouTube" href="" />
-            <ArchiveLink label="Bilibili" href="" />
           </div>
         </section>
 
         <section className="mt-20 max-w-3xl">
           <SectionLabel>About</SectionLabel>
           <h2 className="mt-3 font-display text-3xl font-semibold">
-            About TEDx Youth@JLHS
+            About TEDxYouth@JLHS
           </h2>
           <p className="mt-5 text-base leading-7 text-black/65">
-            TEDx Youth@JLHS is a student-led TEDx initiative at Jinling High
+            TEDxYouth@JLHS is a student-led TEDx initiative at Jinling High
             School. Each annual program creates a platform for ideas sharing,
             thoughtful storytelling, and perspectives from the school community.
           </p>
@@ -199,12 +229,13 @@ export default function TedxPage() {
             Leadership &amp; Contributions
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-black/65">
-            TEDx Youth@JLHS is sustained by students who contribute as founders,
-            speakers, hosts, curators, executive officers, and event managers.
+            TEDxYouth@JLHS is sustained by students who serve as founders,
+            event managers, organizers, and multimedia leads.
           </p>
           <div className="mt-8">
-            {leadershipPeriods.map((period) => (
-              <LeadershipPeriod key={period.period} period={period} />
+            <FounderCredit entry={founder} />
+            {leadershipYears.map((entry) => (
+              <LeadershipYear key={entry.year} entry={entry} />
             ))}
           </div>
         </section>

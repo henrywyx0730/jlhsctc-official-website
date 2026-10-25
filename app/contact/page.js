@@ -4,21 +4,19 @@ import SiteFooter from "../components/SiteFooter";
 const items = [
   {
     title: "Official Instagram",
+    label: "Primary official account",
     channel: "@jlhszmb_ctc",
-    description: "Updates, announcements, and activities of the Critical Thinking Club.",
+    description:
+      "For general inquiries, collaborations, formal communications, and requests for authorization to use CTC materials.",
     href: "https://www.instagram.com/jlhszmb_ctc/",
   },
   {
-    title: "Archive",
+    title: "Archival Instagram",
+    label: "Official archival account",
     channel: "@ctc_archives",
-    description: "Historical records and preserved materials of the Critical Thinking Club.",
+    description:
+      "For historical preservation, past activities, and archival materials. Inquiries should be directed to the primary account.",
     href: "https://www.instagram.com/ctc_archives/",
-  },
-  {
-    title: "Website",
-    channel: "jlhsctc.org",
-    description: "Official website and institutional archive of the Critical Thinking Club.",
-    href: "https://jlhsctc.org",
   },
 ];
 
@@ -45,7 +43,8 @@ export default function ContactPage() {
               className="flex flex-col gap-4 border-b border-[#d0d7de] py-6 transition-colors hover:bg-[#f6f8fa] sm:flex-row sm:items-center sm:justify-between sm:gap-8"
             >
               <div className="min-w-0">
-                <h2 className="font-serif text-2xl font-normal tracking-tight text-black/90">
+                <p className="text-sm text-black/55">{item.label}</p>
+                <h2 className="mt-1 font-serif text-2xl font-normal tracking-tight text-black/90">
                   {item.title}
                 </h2>
                 <p className="mt-1 text-sm leading-6 text-black/55">

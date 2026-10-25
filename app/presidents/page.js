@@ -50,7 +50,7 @@ const presidentTerms = [
         bio: "Michelle Wei served as President of the Critical Thinking Club during the 2025–2026 academic year. Together with Ivanna Hua, she launched the club’s first interschool mock trial competition in partnership with the NSFZ IB Department and contributed to club construction through public events including TEDxYouth@JLHS 2026, inter-club debates, and the CTC Online Archive.",
         achievements: [
           "2025 NUMT Winter Tournament Team 3rd Place",
-          "2026 TEDxYouth@JLHS Organizer",
+          "2026 TEDxYouth@JLHS Event Manager",
         ],
       },
       {
@@ -84,7 +84,7 @@ const presidentTerms = [
         achievements: [
           "2024 TEDxYouth@JLHS Speaker",
           "2024 NUMT Summer Tournament Team Champion",
-          "2025 TEDxYouth@JLHS Chief Organizer",
+          "2025 TEDxYouth@JLHS Event Manager",
           "2025 TEDxYouth@JLHS Curator",
           "2025 NUMT Winter Tournament Team 3rd Place",
           "2025 NUMT Winter Tournament Best Attorney",
@@ -139,6 +139,7 @@ const presidentTerms = [
           "2023 TEDxYouth@JLHS Speaker",
           "2023 NUMT Summer Tournament Outstanding Attorney",
           "2024 NUMT Summer Tournament Team Champion",
+          "2024 TEDxYouth@JLHS Organizer",
           "2024 NUMT Summer Tournament Best Attorney",
           "2024–2025 TEDxYouth@JLHS Curator",
         ],
@@ -154,7 +155,6 @@ const presidentTerms = [
         achievements: [
           "2023 TEDxYouth@JLHS Host",
           "2024 TEDxYouth@JLHS Speaker",
-          "2024–2025 TEDxYouth@JLHS Speaker",
           "2024 NUMT Summer Tournament Team Champion",
           "2024 NUMT Summer Tournament Best Witness",
           "2025 NUMT Winter Tournament Team 3rd Place",
@@ -172,9 +172,9 @@ const presidentTerms = [
         bio: "Coco Hu served as Co-President of the Critical Thinking Club during the 2023–2024 academic year, taking a leading role in public speaking initiatives and event organization. Through projects such as TEDxYouth@JLHS, she contributed to the club’s public-facing initiatives and community engagement.",
         achievements: [
           "2023 TEDxYouth@JLHS Speaker",
-          "2023 TEDxYouth@JLHS Event Manager",
           "2023 NUMT Summer Tournament Outstanding Witness Honorable Mention",
           "2023 PPMT Summer Tournament Team 6th Place",
+          "2024 TEDxYouth@JLHS Event Manager",
           "2024 TEDxYouth@JLHS Executive Officer",
           "2025 NUMT Winter Tournament Team 3rd Place",
         ],

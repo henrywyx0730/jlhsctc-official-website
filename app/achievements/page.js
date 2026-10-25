@@ -95,22 +95,43 @@ const competitionYears = [
 
 const speakingPeriods = [
   {
-    period: "2024–2025 TEDx Youth@JLHS",
+    year: "2026",
     entries: [
-      { person: "Coco Hu (胡可萱)", contribution: "Executive Officer" },
-      { person: "Henry Wu (吴昱贤)", contribution: "Curator" },
+      { person: "Michelle Wei (魏明萱)", contribution: "Event Manager" },
+      { person: "Ivanna Hua (华艺雯)", contribution: "Organizer" },
+      { person: "George Tian (天湙)", contribution: "Speaker" },
+    ],
+  },
+  {
+    year: "2025",
+    entries: [
+      { person: "Leah Zhuang (庄子慧)", contribution: "Event Manager; Curator" },
+      { person: "Michelle Luan (栾雨诺)", contribution: "Organizer" },
       { person: "Lucy Liu (刘美忱)", contribution: "Speaker" },
     ],
   },
   {
-    period: "2023 TEDx Youth@JLHS",
+    year: "2024",
+    entries: [
+      {
+        person: "Coco Hu (胡可萱)",
+        contribution: "Event Manager; Executive Officer",
+      },
+      {
+        person: "Henry Wu (吴昱贤)",
+        contribution: "Organizer; Curator (2024–2025)",
+      },
+      { person: "Leah Zhuang (庄子慧)", contribution: "Speaker" },
+      { person: "Michelle Luan (栾雨诺)", contribution: "Speaker" },
+      { person: "Lucy Liu (刘美忱)", contribution: "Speaker" },
+    ],
+  },
+  {
+    year: "2023",
     entries: [
       { person: "Henry Wu (吴昱贤)", contribution: "Speaker" },
       { person: "Lucy Liu (刘美忱)", contribution: "Host" },
-      {
-        person: "Coco Hu (胡可萱)",
-        contribution: "Speaker; Event Manager",
-      },
+      { person: "Coco Hu (胡可萱)", contribution: "Speaker" },
     ],
   },
 ];
@@ -240,19 +261,17 @@ function CompetitionAchievements() {
 }
 
 function SpeakingPeriod({ period }) {
-  const [year] = period.period.split(" TEDx Youth@JLHS");
-
   return (
     <section className="border-t border-[#d0d7de] pt-10 first:border-t-0 first:pt-0">
-      <p className="font-serif text-3xl font-normal tracking-tight text-black/90">{year}</p>
+      <p className="font-serif text-3xl font-normal tracking-tight text-black/90">{period.year}</p>
       <h3 className="mt-2 font-display text-2xl font-semibold text-black/80">
-        TEDx Youth@JLHS
+        TEDxYouth@JLHS
       </h3>
       <HonorDivider label="Leadership & Speaking" className="mt-5" />
       <ul className="mt-4 space-y-4 border-l border-[#d0d7de] pl-5 text-sm leading-6">
         {period.entries.map((entry) => (
           <li
-            key={`${period.period}-${entry.person}`}
+            key={`${period.year}-${entry.person}`}
             className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-5"
           >
             <span className="font-semibold text-black/80">{entry.person}</span>
@@ -268,7 +287,7 @@ function SpeakingAchievements() {
   return (
     <div className="mt-8 space-y-10">
       {speakingPeriods.map((period) => (
-        <SpeakingPeriod key={period.period} period={period} />
+        <SpeakingPeriod key={period.year} period={period} />
       ))}
     </div>
   );

@@ -32,7 +32,7 @@ const currentPresidents = [
 ];
 
 const frontOfficeMembers = [
-  "Yuxian Wu (吴昱贤)",
+  "Henry Wu (吴昱贤)",
   "Leah Zhuang (庄子慧)",
   "Lucy Liu (刘美忱)",
   "Michelle Luan (栾雨诺)",
@@ -208,7 +208,7 @@ export default function Home() {
         </EditorialSection>
 
         <EditorialSection
-          title="TEDx Youth@JLHS"
+          title="TEDxYouth@JLHS"
           description="A student-led TEDx platform dedicated to sharing ideas, stories, and perspectives."
           href="/tedx"
           actionLabel="View TEDx archive"

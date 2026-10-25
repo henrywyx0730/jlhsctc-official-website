@@ -3,13 +3,14 @@ import SiteFooter from "../../components/SiteFooter";
 
 const documents = [
   {
-    title: "Mock Trial Review.pdf",
-    description: "Review material archived by the Critical Thinking Club.",
-    href: "/archive-materials/documents/mock-trial-review.pdf",
-  },
-  {
-    title: "Instructions.pdf",
-    description: "Instruction document archived by the Critical Thinking Club.",
+    title: "Instructions",
+    author: "Henry Wu (吴昱贤)",
+    organization: "Critical Thinking Club (CTC)",
+    originallyWritten: "July 2024",
+    lastUpdated: "July 2026",
+    format: "PDF",
+    pages: 3,
+    fileSize: "99 KB",
     href: "/archive-materials/documents/instructions.pdf",
   },
 ];
@@ -55,11 +56,14 @@ export default function ArchiveDocumentsPage() {
                   <path d="M13.5 3.5v4h4M9 12h6M9 16h6" />
                 </svg>
                 <div className="min-w-0">
-                  <h2 className="text-base font-semibold">
-                    {doc.title.replace(/\.pdf$/i, "")}
-                  </h2>
+                  <h2 className="text-base font-semibold">{doc.title}</h2>
                   <p className="mt-1 text-sm leading-6 text-black/55">
-                    {doc.description}
+                    Written by {doc.author} for the {doc.organization}.
+                  </p>
+                  <p className="mt-1 text-sm leading-6 text-black/55">
+                    Originally written {doc.originallyWritten} · Last updated{" "}
+                    {doc.lastUpdated} · {doc.format} · {doc.pages} pages ·{" "}
+                    {doc.fileSize}
                   </p>
                 </div>
               </div>
