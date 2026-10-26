@@ -98,11 +98,6 @@ function TalkArchiveEntry({ event }) {
                 <p className="mt-1 text-sm leading-6 text-black/60">
                   {talk.title}
                 </p>
-                {talk.description && (
-                  <p className="mt-3 max-w-3xl text-sm leading-6 text-black/65">
-                    {talk.description}
-                  </p>
-                )}
                 {(talk.youtube || talk.bilibili) && (
                   <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm">
                     <span className="text-black/60">Watch:</span>
