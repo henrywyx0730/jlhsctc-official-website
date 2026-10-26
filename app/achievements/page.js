@@ -1,5 +1,13 @@
-import SiteHeader from "../components/SiteHeader";
-import SiteFooter from "../components/SiteFooter";
+import { createPageMetadata } from "../lib/metadata";
+
+const description =
+  "A record of achievements, competition results, public speaking, and leadership contributions associated with the Critical Thinking Club.";
+
+export const metadata = createPageMetadata({
+  title: "Achievements",
+  description,
+  path: "/achievements",
+});
 
 const competitionYears = [
   {
@@ -187,7 +195,7 @@ function PlacementHonor({ result }) {
   return (
     <div className="mt-5 flex max-w-xs items-center gap-2 text-[#8f6d36]">
       <span className="h-px w-6 bg-[#b08d57]" aria-hidden="true" />
-      <span className="font-serif text-xs font-medium uppercase tracking-[0.1em] text-black/50">
+      <span className="font-serif text-xs font-medium uppercase tracking-[0.1em] text-black/65">
         {result}
       </span>
       <span className="h-px w-6 bg-[#b08d57]" aria-hidden="true" />
@@ -295,9 +303,7 @@ function SpeakingAchievements() {
 
 export default function AchievementsPage() {
   return (
-    <main className="min-h-screen bg-white text-[#17130d]">
-      <SiteHeader />
-
+    <>
       <section className="mx-auto max-w-6xl px-6 py-12">
         <h1 className="mt-0 font-serif text-5xl font-semibold tracking-tight md:text-7xl">
           Achievements
@@ -320,7 +326,6 @@ export default function AchievementsPage() {
         </section>
       </section>
 
-      <SiteFooter />
-    </main>
+    </>
   );
 }

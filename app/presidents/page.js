@@ -1,6 +1,14 @@
 import Image from "next/image";
-import SiteHeader from "../components/SiteHeader";
-import SiteFooter from "../components/SiteFooter";
+import { createPageMetadata } from "../lib/metadata";
+
+const description =
+  "A chronological archive of Critical Thinking Club presidents and co-presidents, organized by academic year.";
+
+export const metadata = createPageMetadata({
+  title: "Presidents",
+  description,
+  path: "/presidents",
+});
 
 const presidentTerms = [
   {
@@ -190,7 +198,7 @@ function termId(year) {
 function SectionNavigation({ terms }) {
   return (
     <nav aria-label="President periods">
-      <p className="text-xs font-semibold text-black/50">
+      <p className="text-xs font-semibold text-black/65">
         Sections
       </p>
       <ul className="mt-1 flex gap-3 overflow-x-auto pb-1 lg:mt-2 lg:flex-col lg:gap-1 lg:overflow-visible lg:pb-0">
@@ -212,7 +220,7 @@ function SectionNavigation({ terms }) {
 function AchievementList({ achievements }) {
   if (!achievements.length) {
     return (
-      <p className="text-sm leading-6 text-black/45">
+      <p className="text-sm leading-6 text-black/60">
         Selected achievements will be added later.
       </p>
     );
@@ -263,9 +271,9 @@ function ProfileRow({ person }) {
           <div className="flex flex-wrap items-center gap-3">
             <h3 className="text-3xl font-semibold tracking-tight">{person.name}</h3>
             {person.chineseName && (
-              <span className="text-base text-black/50">{person.chineseName}</span>
+              <span className="text-base text-black/60">{person.chineseName}</span>
             )}
-            <span className="text-sm font-medium text-black/50">
+            <span className="text-sm font-medium text-black/60">
               {person.role}
             </span>
           </div>
@@ -297,9 +305,7 @@ function ProfileRow({ person }) {
 
 export default function PresidentsPage() {
   return (
-    <main className="scroll-smooth min-h-screen bg-white text-[#17130d]">
-      <SiteHeader />
-
+    <div className="scroll-smooth">
       <section className="mx-auto max-w-6xl px-6 py-12">
         <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
           Presidents
@@ -351,7 +357,6 @@ export default function PresidentsPage() {
           </aside>
         </div>
       </section>
-      <SiteFooter />
-    </main>
+    </div>
   );
 }

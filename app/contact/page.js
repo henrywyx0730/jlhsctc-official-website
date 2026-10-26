@@ -1,5 +1,13 @@
-import SiteHeader from "../components/SiteHeader";
-import SiteFooter from "../components/SiteFooter";
+import { createPageMetadata } from "../lib/metadata";
+
+const description =
+  "Official channels for inquiries, collaborations, and authorized use of Critical Thinking Club materials.";
+
+export const metadata = createPageMetadata({
+  title: "Contact",
+  description,
+  path: "/contact",
+});
 
 const items = [
   {
@@ -22,10 +30,7 @@ const items = [
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-white text-[#17130d]">
-      <SiteHeader />
-
-      <section className="mx-auto max-w-6xl px-6 py-12">
+    <section className="mx-auto max-w-6xl px-6 py-12">
         <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
           Contact
         </h1>
@@ -57,8 +62,6 @@ export default function ContactPage() {
             </a>
           ))}
         </div>
-      </section>
-      <SiteFooter />
-    </main>
+    </section>
   );
 }

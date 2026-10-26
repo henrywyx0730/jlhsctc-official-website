@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -22,13 +22,32 @@ function isActivePath(pathname, href) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export default function SiteHeader() {
-  const pathname = usePathname();
+function HeaderNavigation({ pathname }) {
   const [isOpen, setIsOpen] = useState(false);
+  const menuButtonRef = useRef(null);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return undefined;
+    }
+
+    function handleKeyDown(event) {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#d0d7de] bg-white/95 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+    <>
+      <nav
+        aria-label="Primary navigation"
+        className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3"
+      >
         <Link
           href="/"
           className="flex items-center gap-3"
@@ -64,9 +83,10 @@ export default function SiteHeader() {
         </div>
 
         <button
+          ref={menuButtonRef}
           type="button"
           className="flex h-9 w-9 items-center justify-center rounded-md border border-[#d0d7de] bg-[#f6f8fa] text-black/70 md:hidden"
-          aria-label="Toggle navigation menu"
+          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isOpen}
           aria-controls="mobile-site-nav"
           onClick={() => setIsOpen((open) => !open)}
@@ -79,34 +99,43 @@ export default function SiteHeader() {
         </button>
       </nav>
 
-      {isOpen && (
-        <div
-          id="mobile-site-nav"
-          className="border-t border-[#d0d7de] bg-[#f6f8fa] md:hidden"
-        >
-          <div className="mx-auto grid max-w-6xl gap-1 px-6 py-3">
-            {navItems.map((item) => {
-              const active = isActivePath(pathname, item.href);
+      <div
+        id="mobile-site-nav"
+        hidden={!isOpen}
+        className="border-t border-[#d0d7de] bg-[#f6f8fa] md:hidden"
+      >
+        <div className="mx-auto grid max-w-6xl gap-1 px-6 py-3">
+          {navItems.map((item) => {
+            const active = isActivePath(pathname, item.href);
 
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`rounded-md px-3 py-2 text-sm transition-all duration-100 hover:bg-black/5 active:scale-[0.99] active:bg-black/10 ${
-                    active
-                      ? "font-semibold text-black"
-                      : "font-medium text-black/65"
-                  }`}
-                  aria-current={active ? "page" : undefined}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </div>
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`rounded-md px-3 py-2 text-sm transition-all duration-100 hover:bg-black/5 active:scale-[0.99] active:bg-black/10 ${
+                  active
+                    ? "font-semibold text-black"
+                    : "font-medium text-black/65"
+                }`}
+                aria-current={active ? "page" : undefined}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
-      )}
+      </div>
+    </>
+  );
+}
+
+export default function SiteHeader() {
+  const pathname = usePathname();
+
+  return (
+    <header className="sticky top-0 z-50 border-b border-[#d0d7de] bg-white/95 backdrop-blur">
+      <HeaderNavigation key={pathname} pathname={pathname} />
     </header>
   );
 }

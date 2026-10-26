@@ -1,6 +1,14 @@
-import SiteHeader from "../components/SiteHeader";
-import SiteFooter from "../components/SiteFooter";
 import { tedxEvents } from "../../src/data/tedxEvents";
+import { createPageMetadata } from "../lib/metadata";
+
+const description =
+  "The official archive of TEDxYouth@JLHS events, talks, and student leadership contributions.";
+
+export const metadata = createPageMetadata({
+  title: "TEDxYouth@JLHS",
+  description,
+  path: "/tedx",
+});
 
 const founder = { person: "Jack Lyu (吕嘉涵)", contribution: "Founder · 2023" };
 
@@ -46,7 +54,7 @@ const leadershipYears = [
 
 function SectionLabel({ children }) {
   return (
-    <p className="text-xs font-medium text-[#e62b1e]">
+    <p className="text-xs font-medium text-[#b62318]">
       {children}
     </p>
   );
@@ -58,7 +66,7 @@ function ArchiveLink({ label, href }) {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="font-medium text-[#e62b1e] underline decoration-[#e62b1e]/50 underline-offset-4 hover:text-black"
+      className="font-medium text-[#b62318] underline decoration-[#b62318]/50 underline-offset-4 hover:text-black"
     >
       {label} →
     </a>
@@ -90,9 +98,14 @@ function TalkArchiveEntry({ event }) {
                 <p className="mt-1 text-sm leading-6 text-black/60">
                   {talk.title}
                 </p>
+                {talk.description && (
+                  <p className="mt-3 max-w-3xl text-sm leading-6 text-black/65">
+                    {talk.description}
+                  </p>
+                )}
                 {(talk.youtube || talk.bilibili) && (
                   <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm">
-                    <span className="text-black/45">Watch:</span>
+                    <span className="text-black/60">Watch:</span>
                     {talk.youtube && (
                       <ArchiveLink label="YouTube" href={talk.youtube} />
                     )}
@@ -151,9 +164,7 @@ function LeadershipYear({ entry }) {
 
 export default function TedxPage() {
   return (
-    <main className="min-h-screen bg-white text-[#17130d]">
-      <SiteHeader />
-
+    <>
       <section className="bg-black text-white">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
           <h1
@@ -241,7 +252,6 @@ export default function TedxPage() {
         </section>
       </section>
 
-      <SiteFooter />
-    </main>
+    </>
   );
 }

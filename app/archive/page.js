@@ -1,5 +1,14 @@
-import SiteHeader from "../components/SiteHeader";
-import SiteFooter from "../components/SiteFooter";
+import Link from "next/link";
+import { createPageMetadata } from "../lib/metadata";
+
+const description =
+  "A collection of Critical Thinking Club historical records, documents, media, and preserved materials.";
+
+export const metadata = createPageMetadata({
+  title: "Archive",
+  description,
+  path: "/archive",
+});
 
 const archiveSections = [
   {
@@ -9,22 +18,17 @@ const archiveSections = [
   },
   {
     title: "Articles",
-    href: "/archive/articles",
     description: "Club writings, reflections, reviews, and article-style records.",
   },
   {
     title: "Media",
-    href: "/archive/media",
     description: "Photos, videos, posters, and visual records from club activities.",
   },
 ];
 
 export default function ArchivePage() {
   return (
-    <main className="min-h-screen bg-white text-[#17130d]">
-      <SiteHeader />
-
-      <section className="mx-auto max-w-6xl px-6 py-12">
+    <section className="mx-auto max-w-6xl px-6 py-12">
         <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
           Archive
         </h1>
@@ -35,27 +39,44 @@ export default function ArchivePage() {
 
         <div className="mt-10 border-t border-[#d0d7de]">
           {archiveSections.map((section) => (
-            <a
-              key={section.href}
-              href={section.href}
-              className="flex flex-col gap-4 border-b border-[#d0d7de] py-6 transition-colors hover:bg-[#f6f8fa] sm:flex-row sm:items-center sm:justify-between sm:gap-8"
-            >
-              <div className="min-w-0">
-                <h2 className="font-serif text-2xl font-normal tracking-tight text-black/90">
-                  {section.title}
-                </h2>
-                <p className="mt-2 max-w-2xl text-sm leading-6 text-black/55">
-                  {section.description}
-                </p>
+            section.href ? (
+              <Link
+                key={section.title}
+                href={section.href}
+                className="flex flex-col gap-4 border-b border-[#d0d7de] py-6 transition-colors hover:bg-[#f6f8fa] sm:flex-row sm:items-center sm:justify-between sm:gap-8"
+              >
+                <div className="min-w-0">
+                  <h2 className="font-serif text-2xl font-normal tracking-tight text-black/90">
+                    {section.title}
+                  </h2>
+                  <p className="mt-2 max-w-2xl text-sm leading-6 text-black/60">
+                    {section.description}
+                  </p>
+                </div>
+                <span className="whitespace-nowrap text-sm font-medium text-black/65 sm:shrink-0">
+                  View collection <span aria-hidden="true">→</span>
+                </span>
+              </Link>
+            ) : (
+              <div
+                key={section.title}
+                className="flex flex-col gap-4 border-b border-[#d0d7de] py-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8"
+              >
+                <div className="min-w-0">
+                  <h2 className="font-serif text-2xl font-normal tracking-tight text-black/90">
+                    {section.title}
+                  </h2>
+                  <p className="mt-2 max-w-2xl text-sm leading-6 text-black/60">
+                    {section.description}
+                  </p>
+                </div>
+                <span className="text-sm text-black/60 sm:shrink-0">
+                  No published records
+                </span>
               </div>
-              <span className="whitespace-nowrap text-sm font-medium text-black/60 sm:shrink-0">
-                View collection <span aria-hidden="true">→</span>
-              </span>
-            </a>
+            )
           ))}
         </div>
-      </section>
-      <SiteFooter />
-    </main>
+    </section>
   );
 }

@@ -36,7 +36,7 @@ It provides:
 
 Current primary order in the implementation:
 
-`Home` · `Presidents` · `Archive` · `Achievements` · `TEDx` · `Events` · `Contact`
+`Home` · `Achievements` · `Presidents` · `TEDx` · `Archive` · `Contact`
 
 This order is functional, but it does not fully reflect the club’s public
 story. Achievements represents CTC’s public reputation and competitive history;
@@ -48,7 +48,7 @@ not carry the same primary-product emphasis as reputation and leadership pages.
 
 Recommended order:
 
-`Home` · `Achievements` · `Presidents` · `TEDx` · `Events` · `Archive` · `Contact`
+`Home` · `Achievements` · `Presidents` · `TEDx` · `Archive` · `Contact`
 
 Rationale:
 
@@ -56,7 +56,7 @@ Rationale:
 - `Achievements` follows with the clearest public evidence of CTC’s reputation,
   competitive history, and recognizable accomplishments.
 - `Presidents` then provides the leadership history behind that record.
-- `TEDx` and `Events` represent active programs and public-facing activity.
+- `TEDx` represents an active program and public-facing activity.
 - `Archive` remains accessible, but later in the sequence as a library/archive
   destination rather than a primary product section.
 - `Contact` closes with practical communication information.
@@ -109,11 +109,11 @@ differ. Do not use tracked uppercase as a substitute for hierarchy.
 There are three recognizable surface patterns:
 
 1. **Section panel**: rounded border, gray header strip, white content body.
-   Used on the homepage and Presidents archive.
-2. **Collection card**: independent bordered link with compact padding and a
-   status badge. Used on the Archive landing page.
+   Reserved for a genuinely grouped surface rather than a whole record page.
+2. **Collection link**: a clearly actionable entry point to an active archive
+   collection. The Archive landing page uses an editorial row for this purpose.
 3. **Archive row**: a full-width bordered list with compact horizontal entries.
-   Used for Documents and Official Statements.
+   Used for Documents and other published archive records.
 
 The current direction is moving away from large table headers and file-manager
 interfaces. That is appropriate for a small institutional archive. Cards should
@@ -183,8 +183,9 @@ metadata that can safely remain compact.
 
 ### Component Consistency
 
-`SiteHeader` and `SiteFooter` are shared correctly across the public pages.
-Most other patterns remain local to their page:
+`SiteHeader` and `SiteFooter` are rendered once by the root App Router layout,
+which also owns the single main landmark and skip-navigation target. Most other
+patterns remain local to their page:
 
 - `SectionBox` and the current-president card are local to `app/page.js`.
 - `SectionLabel`, event archive entries, and leadership entries are local to
@@ -203,8 +204,8 @@ kept close to the page that owns the content.
 
 - Use cards for navigation and grouped collections, not for every piece of
   content or every person in an institutional record.
-- Prefer editorial lists for documents, official statements, articles, media
-  records, and other archive entries.
+- Prefer editorial lists for documents, articles, media records, and other
+  archive entries.
 - Prefer a single horizontal row or vertical record block when the content is a
   small archive rather than a large dataset.
 - Avoid unnecessary header bars inside containers. If a collection has only a
@@ -224,7 +225,7 @@ kept close to the page that owns the content.
 | Achievements | Honors archive / record of distinction | Premium editorial typography, restrained award accents, chronological records |
 | Presidents | Leadership archive | Biography/document layout, chronological structure, profile records |
 | TEDx | Independent brand/event identity | Black, white, TED red, editorial event presentation |
-| Events | Activity archive | Event records and timelines |
+| Events | Retained placeholder route | Minimal noindex placeholder, omitted from primary navigation and sitemap |
 | Archive | Historical library / collection directory | Collection cards at entry level, document lists inside collections |
 | Contact | Practical information | Minimal information block |
 
@@ -294,9 +295,10 @@ historical sequence.
 
 ### Archive
 
-The Archive is a collection directory. Its landing page uses independent
-collection cards, while Documents and Official Statements use compact archive
-rows because they contain a small number of records.
+The Archive is a collection directory. Its landing page uses an editorial
+collection index, while Documents uses compact archive rows because it contains
+a small number of records. Empty Articles and Media collections remain visible
+as non-actionable status rows and are excluded from indexing.
 
 Use: collection title, description, and status/count as the information order.
 Avoid table headers when the collection is too small to need columns.
@@ -340,9 +342,10 @@ generic profile-card grids.
 
 ### Events and Contact
 
-These pages currently use the shared documentation layout and pending-content
-rows. Until real records are available, keep them modest and transparent. Do
-not make placeholder pages appear more complete than their source material.
+Contact uses the shared documentation layout for practical communication
+information. The Events route is retained as a noindex placeholder but is not
+promoted in primary navigation or the sitemap. Until real records are
+available, keep placeholders modest and transparent.
 
 ## 6. Color and Surface Tokens
 
@@ -378,8 +381,8 @@ communicate page identity or record importance, not decorate every component.
 
 ## 8. Content and Data Conventions
 
-- Keep content data-driven when a page has repeated years, events, statements,
-  documents, or people.
+- Keep content data-driven when a page has repeated years, events, documents,
+  or people.
 - Preserve exact official names, dates, tournament names, and role titles.
 - Do not add placeholder awards or biographies to make a page look fuller.
 - Keep personal achievements distinct from club archive content unless they are
@@ -416,7 +419,6 @@ The redesign should proceed in practical, bounded phases:
 
 - Redesign the Archive landing page as a library-style collection directory.
 - Refine Documents as compact institutional document rows.
-- Refine Official Statements as compact official-record rows.
 
 ### Phase 3: Achievements
 

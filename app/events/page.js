@@ -1,5 +1,11 @@
-import SiteHeader from "../components/SiteHeader";
-import SiteFooter from "../components/SiteFooter";
+import { createPageMetadata } from "../lib/metadata";
+
+export const metadata = createPageMetadata({
+  title: "Events",
+  description: "A future record of Critical Thinking Club activities and programs.",
+  path: "/events",
+  index: false,
+});
 
 const items = [
   { year: "Year pending", title: "Club Events", description: "Content pending." },
@@ -9,10 +15,7 @@ const items = [
 
 export default function EventsPage() {
   return (
-    <main className="min-h-screen bg-white text-[#17130d]">
-      <SiteHeader />
-
-      <section className="mx-auto max-w-6xl px-6 py-12">
+    <section className="mx-auto max-w-6xl px-6 py-12">
         <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
           Events
         </h1>
@@ -39,8 +42,6 @@ export default function EventsPage() {
             </article>
           ))}
         </div>
-      </section>
-      <SiteFooter />
-    </main>
+    </section>
   );
 }

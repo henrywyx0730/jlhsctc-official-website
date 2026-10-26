@@ -1,6 +1,16 @@
 import Image from "next/image";
-import SiteHeader from "./components/SiteHeader";
-import SiteFooter from "./components/SiteFooter";
+import Link from "next/link";
+import { createPageMetadata } from "./lib/metadata";
+
+const description =
+  "The official website and institutional archive of the Critical Thinking Club at Jinling High School ZMB.";
+
+export const metadata = createPageMetadata({
+  title: "Critical Thinking Club | Jinling High School ZMB",
+  description,
+  path: "/",
+  absoluteTitle: true,
+});
 
 const currentPresidents = [
   {
@@ -57,12 +67,12 @@ function EditorialSection({ title, description, href, actionLabel, children }) {
           )}
         </div>
         {href && (
-          <a
+          <Link
             href={href}
             className="whitespace-nowrap text-sm font-medium text-black/65 underline decoration-[#d0d7de] underline-offset-4 hover:text-black"
           >
             {actionLabel} →
-          </a>
+          </Link>
         )}
       </div>
       {children && <div className="mt-8">{children}</div>}
@@ -85,15 +95,15 @@ function CurrentPresidentCard({ president }) {
         </div>
       ) : (
         <div className="flex aspect-[4/3] w-full max-w-[260px] items-center justify-center">
-          <span className="text-sm text-black/45">Profile image pending</span>
+          <span className="text-sm text-black/60">Profile image pending</span>
         </div>
       )}
 
       <div className="mt-4 flex flex-1 flex-col text-left">
         <div className="flex flex-wrap items-center gap-3">
           <h3 className="text-2xl font-semibold tracking-tight">{president.name}</h3>
-          <span className="text-base text-black/50">{president.chineseName}</span>
-          <span className="text-sm font-medium text-black/50">{president.role}</span>
+          <span className="text-base text-black/60">{president.chineseName}</span>
+          <span className="text-sm font-medium text-black/60">{president.role}</span>
         </div>
 
         <p className="mt-3 text-sm leading-6 text-black/55">{president.education}</p>
@@ -118,9 +128,7 @@ function CurrentPresidentCard({ president }) {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-[#17130d]">
-      <SiteHeader />
-
+    <>
       <section className="border-b border-[#d0d7de] bg-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-28">
           <div>
@@ -287,7 +295,6 @@ export default function Home() {
         </EditorialSection>
       </div>
 
-      <SiteFooter />
-    </main>
+    </>
   );
 }

@@ -1,5 +1,14 @@
-import SiteHeader from "../../components/SiteHeader";
-import SiteFooter from "../../components/SiteFooter";
+import Link from "next/link";
+import { createPageMetadata } from "../../lib/metadata";
+
+const description =
+  "Official documents and reference materials preserved by the Critical Thinking Club.";
+
+export const metadata = createPageMetadata({
+  title: "Documents",
+  description,
+  path: "/archive/documents",
+});
 
 const documents = [
   {
@@ -17,12 +26,9 @@ const documents = [
 
 export default function ArchiveDocumentsPage() {
   return (
-    <main className="min-h-screen bg-white text-[#17130d]">
-      <SiteHeader />
-
-      <section className="mx-auto max-w-6xl px-6 py-12">
-        <div className="flex items-center gap-2 text-sm text-black/50">
-          <a href="/archive" className="hover:text-black">Archive</a>
+    <section className="mx-auto max-w-6xl px-6 py-12">
+        <div className="flex items-center gap-2 text-sm text-black/65">
+          <Link href="/archive" className="hover:text-black">Archive</Link>
           <span>/</span>
           <span>Documents</span>
         </div>
@@ -74,8 +80,6 @@ export default function ArchiveDocumentsPage() {
             </a>
           ))}
         </div>
-      </section>
-      <SiteFooter />
-    </main>
+    </section>
   );
 }
