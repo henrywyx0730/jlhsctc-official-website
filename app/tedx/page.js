@@ -54,7 +54,7 @@ const leadershipYears = [
 
 function SectionLabel({ children }) {
   return (
-    <p className="text-xs font-medium text-[#b62318]">
+    <p className="text-xs font-medium text-tedx-ink">
       {children}
     </p>
   );
@@ -70,7 +70,7 @@ function ArchiveLink({ label, href }) {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="font-medium text-[#b62318] underline decoration-[#b62318]/50 underline-offset-4 hover:text-black"
+      className="font-medium text-tedx-ink underline decoration-tedx-ink/50 underline-offset-4 hover:text-black"
     >
       {label} →
     </a>
@@ -80,7 +80,7 @@ function ArchiveLink({ label, href }) {
 function TalkArchiveEntry({ event }) {
   return (
     <article className="grid gap-5 border-t border-[#d0d7de] py-9 first:border-t-0 first:pt-0 md:grid-cols-[120px_minmax(0,1fr)]">
-      <p className="font-display text-4xl font-semibold tracking-tight text-[#e62b1e]">
+      <p className="font-display text-4xl font-semibold tracking-tight text-tedx-red">
         {event.year}
       </p>
 
@@ -94,7 +94,7 @@ function TalkArchiveEntry({ event }) {
             {event.talks.map((talk, index) => (
               <div
                 key={`${event.year}-${talk.speaker || "talk"}-${index}`}
-                className="border-l-2 border-[#e62b1e]/35 pl-4"
+                className="border-l-2 border-tedx-ink/35 pl-4"
               >
                 <p className="font-display text-lg font-semibold text-black/85">
                   {talk.speaker}
@@ -176,7 +176,7 @@ export default function TedxPage() {
             }}
           >
             <span
-              className="inline-flex items-baseline font-black leading-none tracking-[-0.01em] text-[#EB0028]"
+              className="inline-flex items-baseline font-black leading-none tracking-[-0.01em] text-tedx-red"
               style={{ WebkitTextStroke: "0.06em currentColor" }}
             >
               <span>TED</span>
@@ -191,7 +191,7 @@ export default function TedxPage() {
             A student-led TEDx platform dedicated to sharing ideas, stories, and
             perspectives.
           </p>
-          <p className="mt-8 text-xs font-medium text-[#e62b1e]">
+          <p className="mt-8 text-xs font-medium text-tedx-red">
             Organization History
           </p>
           <p className="mt-2 text-sm text-white/60">

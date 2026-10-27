@@ -1,3 +1,4 @@
+import LaurelHalf from "../components/HonorLaurel";
 import { createPageMetadata } from "../lib/metadata";
 
 const description =
@@ -144,26 +145,6 @@ const speakingPeriods = [
   },
 ];
 
-function LaurelHalf({ mirrored = false }) {
-  return (
-    <svg
-      viewBox="0 0 24 28"
-      className={`h-6 w-5 shrink-0 ${mirrored ? "scale-x-[-1]" : ""}`}
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M20 26C10 23 5 16 5 3" strokeWidth="1.1" />
-      <path d="M8 20c-3-1-5-3-6-6 3 0 6 2 6 6Z" fill="currentColor" stroke="none" />
-      <path d="M6 14c-3-1-4-3-4-6 3 1 5 3 4 6Z" fill="currentColor" stroke="none" />
-      <path d="M7 8C5 6 5 3 7 1c2 2 2 5 0 7Z" fill="currentColor" stroke="none" />
-      <path d="M12 23c-3 0-5-1-7-3 3-1 6 0 7 3Z" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
 function TeamHonor({ result }) {
   return (
     <div className="mt-4 flex max-w-sm items-center gap-2 text-[#8f6d36]">
@@ -258,13 +239,16 @@ function CompetitionAchievements() {
 function SpeakingPeriod({ period }) {
   return (
     <section className="border-t border-[#d0d7de] pt-10 first:border-t-0 first:pt-0">
-      <h3 className="flex flex-wrap items-baseline gap-x-3">
+      <h3>
         <span className="font-serif text-2xl font-normal tracking-tight text-black/90 md:text-3xl">
           {period.year}
-        </span>
-        <span className="text-black/40" aria-hidden="true">
+        </span>{" "}
+        <span
+          className="mx-1.5 font-serif text-2xl text-[#b08d57] md:mx-2 md:text-3xl"
+          aria-hidden="true"
+        >
           ·
-        </span>
+        </span>{" "}
         <span className="font-display text-lg font-semibold text-black/80 md:text-xl">
           TEDxYouth@JLHS
         </span>

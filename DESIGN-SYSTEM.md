@@ -282,6 +282,19 @@ non-hierarchical.
 Use: white surfaces, gray borders, clear introductions, restrained profile
 imagery, and practical location information.
 
+Featured Achievements is a compact honor ledger that summarizes the
+Achievements record. Each row reads year, event, and team result, separated by
+hairline dividers; on mobile the result moves beneath the event name. Results
+use a smaller form of the Achievements honor treatment:
+
+- Team Champion: small gold laurels around the result in gold serif capitals.
+- Other placements, such as Team 3rd Place: muted serif capitals between short
+  gold rules, without laurels, so they are never presented as championships.
+
+Keep the ledger quieter than the homepage hero, and do not use emoji, icons,
+cards, or badges for these results. This summary is the only place on Home that
+uses the gold honor treatment.
+
 ### Presidents
 
 The Presidents page is a chronological leadership archive. Its period sections,
@@ -314,9 +327,11 @@ lists with recipient names stronger than award titles.
 Use: `#8f6d36`/`#765625`-family accents sparingly, especially for championship
 results. Keep years stacked vertically and preserve event chronology.
 
-Achievements is the only page allowed to use a restrained
-ceremonial/premium treatment. Its distinction should come from hierarchy and
-editorial restraint, not from a collection of widgets.
+Achievements is the primary home of the restrained ceremonial/premium
+treatment. Its distinction should come from hierarchy and editorial restraint,
+not from a collection of widgets. The only other permitted use is the smaller,
+consistent honor form in Home's Featured Achievements summary; do not extend
+gold or laurel marks to other sections or pages.
 
 Allowed:
 
@@ -341,6 +356,20 @@ Use: Helvetica/Inter-style logo typography, TED red accents, editorial event
 archive rows, and red links. Avoid gold, laurel marks, award separators, and
 generic profile-card grids.
 
+TEDx red is defined as two Tailwind theme tokens in `app/globals.css`, chosen
+by role rather than by element:
+
+- `tedx-red` (`#eb0028`): the TEDx brand red. Use it for the logo lockup, large
+  display numerals such as event years, accent rules such as the homepage TEDx
+  bar, and short labels on black. It reaches 4.60:1 on white and 4.56:1 on
+  black.
+- `tedx-ink` (`#b62318`): the darker red for small text and links on white,
+  such as section labels and media links (6.48:1). Low-opacity variants such as
+  `border-tedx-ink/35` may be used for the talk-list rules.
+
+Use the tokens (`text-tedx-red`, `text-tedx-ink`, `border-tedx-red`) instead of
+hex values, and do not introduce additional TEDx red shades.
+
 ### Events and Contact
 
 Contact uses the shared documentation layout for practical communication
@@ -360,7 +389,8 @@ These are the current practical tokens to reuse:
 | Muted surface | `#f6f8fa` |
 | Secondary text | `text-black/55` to `text-black/70` |
 | Achievements accent | `#8f6d36` / `#765625` |
-| TEDx accent | `#e62b1e` or the page-approved TED red |
+| TEDx brand red (`tedx-red`) | `#eb0028`: logo, large display, accent rules, labels on black |
+| TEDx text red (`tedx-ink`) | `#b62318`: small text and links on white |
 
 The base CTC site should remain primarily monochrome. Accent colors should
 communicate page identity or record importance, not decorate every component.

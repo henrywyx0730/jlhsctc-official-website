@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import LaurelHalf from "./components/HonorLaurel";
 import { createPageMetadata } from "./lib/metadata";
 
 const description =
@@ -77,6 +78,30 @@ function EditorialSection({ title, description, href, actionLabel, children }) {
       </div>
       {children && <div className="mt-8">{children}</div>}
     </section>
+  );
+}
+
+function FeaturedHonor({ result }) {
+  if (result === "Team Champion") {
+    return (
+      <span className="inline-flex items-center gap-1.5 text-[#8f6d36]">
+        <LaurelHalf className="h-4 w-3.5" />
+        <span className="font-serif text-sm font-bold uppercase tracking-[0.06em] text-[#765625]">
+          {result}
+        </span>
+        <LaurelHalf mirrored className="h-4 w-3.5" />
+      </span>
+    );
+  }
+
+  return (
+    <span className="inline-flex items-center gap-2">
+      <span className="h-px w-4 bg-[#b08d57]" aria-hidden="true" />
+      <span className="font-serif text-xs font-medium uppercase tracking-[0.1em] text-black/65">
+        {result}
+      </span>
+      <span className="h-px w-4 bg-[#b08d57]" aria-hidden="true" />
+    </span>
   );
 }
 
@@ -182,26 +207,24 @@ export default function Home() {
           href="/achievements"
           actionLabel="View achievements"
         >
-          <div className="space-y-3">
+          <ul className="border-t border-[#d0d7de] lg:max-w-3xl">
             {featuredAchievements.map((achievement) => (
-              <div
+              <li
                 key={`${achievement.year}-${achievement.event}`}
-                className="flex items-start gap-3 text-black/80"
+                className="grid grid-cols-[3.25rem_minmax(0,1fr)] items-baseline gap-x-4 gap-y-1.5 border-b border-[#d0d7de] py-4 last:border-b-0 sm:grid-cols-[4rem_minmax(0,1fr)_auto] sm:items-center sm:gap-x-6"
               >
-                <span className="pt-0.5 text-base" aria-hidden="true">
-                  {achievement.result === "Team 3rd Place" ? "🥉" : "🏆"}
+                <span className="font-serif text-lg text-black/55 tabular-nums">
+                  {achievement.year}
+                </span>{" "}
+                <span className="font-serif text-lg font-semibold tracking-tight text-black/85">
+                  {achievement.event}
+                </span>{" "}
+                <span className="col-start-2 flex sm:col-start-auto sm:justify-self-end">
+                  <FeaturedHonor result={achievement.result} />
                 </span>
-                <span>
-                  <span className="block font-serif text-lg font-semibold tracking-tight">
-                    {achievement.year} {achievement.event}
-                  </span>
-                  <span className="block text-sm text-black/55">
-                    {achievement.result}
-                  </span>
-                </span>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </EditorialSection>
 
         <EditorialSection
@@ -210,7 +233,7 @@ export default function Home() {
           href="/presidents"
           actionLabel="View presidents"
         >
-          <div className="mx-auto grid max-w-2xl gap-8 md:grid-cols-2">
+          <div className="grid max-w-3xl gap-x-12 gap-y-10 md:grid-cols-2">
             {currentPresidents.map((president) => (
               <CurrentPresidentCard key={president.name} president={president} />
             ))}
@@ -223,7 +246,7 @@ export default function Home() {
           href="/tedx"
           actionLabel="View TEDx archive"
         >
-          <div className="border-l-2 border-[#E62B1E] pl-5">
+          <div className="border-l-2 border-tedx-red pl-5">
             <p className="font-sans text-xl font-semibold tracking-tight text-black/85">
               Transform, Transcend, Transmit
             </p>

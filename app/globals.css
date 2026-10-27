@@ -7,6 +7,17 @@
   --font-display: var(--font-sans);
 }
 
+/*
+ * TEDx color roles:
+ * tedx-red is the TEDx brand red, reserved for the logo lockup, large display
+ * numerals, accent rules, and short labels on black.
+ * tedx-ink is the darker red for small text and links on white (6.5:1).
+ */
+@theme {
+  --color-tedx-red: #eb0028;
+  --color-tedx-ink: #b62318;
+}
+
 html {
   scroll-behavior: auto;
 }
