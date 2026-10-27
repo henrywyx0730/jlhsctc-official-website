@@ -115,7 +115,9 @@ function CurrentPresidentCard({ president }) {
           <ul className="space-y-1.5 text-sm leading-6 text-black/65">
             {president.achievements.map((achievement) => (
               <li key={achievement} className="flex items-start gap-2">
-                <span className="mt-[1px] text-black/30">•</span>
+                <span className="mt-[1px] text-black/30" aria-hidden="true">
+                  •
+                </span>
                 <span>{achievement}</span>
               </li>
             ))}

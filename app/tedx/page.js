@@ -60,6 +60,10 @@ function SectionLabel({ children }) {
   );
 }
 
+function leadershipRoleLabel(role, people) {
+  return role === "Organizers" && people.length === 1 ? "Organizer" : role;
+}
+
 function ArchiveLink({ label, href }) {
   return (
     <a
@@ -146,7 +150,9 @@ function LeadershipYear({ entry }) {
             key={`${entry.year}-${item.role}`}
             className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-5"
           >
-            <dt className="text-black/60 sm:min-w-[220px]">{item.role}</dt>
+            <dt className="text-black/60 sm:min-w-[220px]">
+              {leadershipRoleLabel(item.role, item.people)}
+            </dt>
             <dd className="font-display text-base font-semibold text-black/85">
               {item.people.join(", ")}
             </dd>

@@ -1,8 +1,24 @@
 import Link from "next/link";
 
+const description = "The requested page is not available.";
+
 export const metadata = {
   title: "Page not found",
-  description: "The requested page is not available.",
+  description,
+  robots: {
+    index: false,
+    follow: false,
+  },
+  openGraph: {
+    type: "website",
+    title: "Page not found",
+    description,
+  },
+  twitter: {
+    card: "summary",
+    title: "Page not found",
+    description,
+  },
 };
 
 export default function NotFound() {

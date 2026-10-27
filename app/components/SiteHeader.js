@@ -22,9 +22,32 @@ function isActivePath(pathname, href) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-function HeaderNavigation({ pathname }) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function SiteHeader() {
+  const pathname = usePathname();
+  const [menuState, setMenuState] = useState({
+    pathname,
+    isOpen: false,
+  });
   const menuButtonRef = useRef(null);
+
+  if (menuState.pathname !== pathname) {
+    setMenuState({ pathname, isOpen: false });
+  }
+
+  const isOpen = menuState.isOpen;
+  const closeMenu = () => setMenuState({ pathname, isOpen: false });
+
+  useEffect(() => {
+    function handlePopState() {
+      setMenuState((currentState) => ({
+        ...currentState,
+        isOpen: false,
+      }));
+    }
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   useEffect(() => {
     if (!isOpen) {
@@ -33,17 +56,17 @@ function HeaderNavigation({ pathname }) {
 
     function handleKeyDown(event) {
       if (event.key === "Escape") {
-        setIsOpen(false);
+        setMenuState({ pathname, isOpen: false });
         menuButtonRef.current?.focus();
       }
     }
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen]);
+  }, [isOpen, pathname]);
 
   return (
-    <>
+    <header className="sticky top-0 z-50 border-b border-[#d0d7de] bg-white/95 backdrop-blur">
       <nav
         aria-label="Primary navigation"
         className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3"
@@ -51,7 +74,7 @@ function HeaderNavigation({ pathname }) {
         <Link
           href="/"
           className="flex items-center gap-3"
-          onClick={() => setIsOpen(false)}
+          onClick={closeMenu}
         >
           <Image
             src="/images/ctc-logo.png"
@@ -89,7 +112,7 @@ function HeaderNavigation({ pathname }) {
           aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isOpen}
           aria-controls="mobile-site-nav"
-          onClick={() => setIsOpen((open) => !open)}
+          onClick={() => setMenuState({ pathname, isOpen: !isOpen })}
         >
           <span className="flex flex-col gap-1" aria-hidden="true">
             <span className="block h-[2px] w-5 rounded-full bg-current"></span>
@@ -118,7 +141,7 @@ function HeaderNavigation({ pathname }) {
                     : "font-medium text-black/65"
                 }`}
                 aria-current={active ? "page" : undefined}
-                onClick={() => setIsOpen(false)}
+                onClick={closeMenu}
               >
                 {item.label}
               </Link>
@@ -126,16 +149,6 @@ function HeaderNavigation({ pathname }) {
           })}
         </div>
       </div>
-    </>
-  );
-}
-
-export default function SiteHeader() {
-  const pathname = usePathname();
-
-  return (
-    <header className="sticky top-0 z-50 border-b border-[#d0d7de] bg-white/95 backdrop-blur">
-      <HeaderNavigation key={pathname} pathname={pathname} />
     </header>
   );
 }

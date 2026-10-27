@@ -147,7 +147,7 @@ const speakingPeriods = [
 function HonorDivider({ label, className = "mt-5" }) {
   return (
     <div className={className}>
-      <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9a783e]">
+      <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#765625]">
         {label}
       </span>
     </div>
@@ -176,10 +176,7 @@ function LaurelHalf({ mirrored = false }) {
 
 function TeamHonor({ result }) {
   return (
-    <div
-      className="mt-4 flex max-w-sm items-center gap-2 text-[#8f6d36]"
-      aria-label={`Team award: ${result}`}
-    >
+    <div className="mt-4 flex max-w-sm items-center gap-2 text-[#8f6d36]">
       <span className="h-px w-6 shrink-0 bg-[#b08d57]" aria-hidden="true" />
       <LaurelHalf />
       <span className="font-serif text-xl font-bold uppercase tracking-[0.04em] text-[#765625] md:text-2xl">
@@ -274,6 +271,7 @@ function SpeakingPeriod({ period }) {
       <p className="font-serif text-3xl font-normal tracking-tight text-black/90">{period.year}</p>
       <h3 className="mt-2 font-display text-2xl font-semibold text-black/80">
         TEDxYouth@JLHS
+        <span className="sr-only"> {period.year}</span>
       </h3>
       <HonorDivider label="Leadership & Speaking" className="mt-5" />
       <ul className="mt-4 space-y-4 border-l border-[#d0d7de] pl-5 text-sm leading-6">
@@ -325,7 +323,6 @@ export default function AchievementsPage() {
           <SpeakingAchievements />
         </section>
       </section>
-
     </>
   );
 }

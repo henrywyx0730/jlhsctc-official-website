@@ -230,7 +230,9 @@ function AchievementList({ achievements }) {
     <ul className="space-y-2 text-sm leading-6 text-black/65">
       {achievements.map((achievement) => (
         <li key={achievement} className="flex gap-2">
-          <span className="text-black/30">•</span>
+          <span className="text-black/30" aria-hidden="true">
+            •
+          </span>
           <span>{achievement}</span>
         </li>
       ))}

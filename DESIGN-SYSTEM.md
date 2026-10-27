@@ -129,7 +129,7 @@ Rules:
   states.
 - Prefer one surface boundary around a collection over nested cards.
 - Use hover background changes for links; avoid shadows and animated lift.
-- Keep status/count badges compact and secondary.
+- Use concise availability text only when a collection has no published records.
 
 ### Shape System
 
@@ -226,7 +226,7 @@ kept close to the page that owns the content.
 | Presidents | Leadership archive | Biography/document layout, chronological structure, profile records |
 | TEDx | Independent brand/event identity | Black, white, TED red, editorial event presentation |
 | Events | Retained placeholder route | Minimal noindex placeholder, omitted from primary navigation and sitemap |
-| Archive | Historical library / collection directory | Collection cards at entry level, document lists inside collections |
+| Archive | Historical library / collection directory | Editorial collection index at entry level, divider-based document rows inside collections |
 | Contact | Practical information | Minimal information block |
 
 The matrix is a content and visual-governance tool. It allows pages to share
@@ -300,7 +300,8 @@ collection index, while Documents uses compact archive rows because it contains
 a small number of records. Empty Articles and Media collections remain visible
 as non-actionable status rows and are excluded from indexing.
 
-Use: collection title, description, and status/count as the information order.
+Use: collection title, description, and a clear action or availability message as
+the information order.
 Avoid table headers when the collection is too small to need columns.
 
 ### Achievements
@@ -415,10 +416,10 @@ The redesign should proceed in practical, bounded phases:
 - Clean up shape and radius usage.
 - Refine navigation order and hierarchy.
 
-### Phase 2: Archive
+### Phase 2: Archive — Completed
 
-- Redesign the Archive landing page as a library-style collection directory.
-- Refine Documents as compact institutional document rows.
+- The Archive landing page uses a library-style editorial collection index.
+- Documents use compact institutional document rows.
 
 ### Phase 3: Achievements
 
