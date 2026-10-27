@@ -6,19 +6,19 @@ export const tedxEvents = [
     description: "",
     talks: [
       {
-        speaker: "Kevin Yang",
-        title: "Beyond the Frame",
+        speaker: "Kevin Yang (杨淳凯)",
+        title: "Beyond the frame -- the \"unseens\" kills",
       },
       {
-        speaker: "Dan Ye",
+        speaker: "Dan Ye (叶庚源)",
         title: "It’s Just Patrick!",
       },
       {
-        speaker: "Blair Cao",
+        speaker: "Blair Cao (曹一梵)",
         title: "Make Us the Owner of Gender Norms",
       },
       {
-        speaker: "Avery Zhang",
+        speaker: "Avery Zhang (张宸睿)",
         title: "The Bread Was Never About Bread",
       },
       {
@@ -26,11 +26,11 @@ export const tedxEvents = [
         title: "How to Prove You Are a Human?",
       },
       {
-        speaker: "James Ji",
+        speaker: "James Ji (嵇晨)",
         title: "Honor the Hesitation in the Darkness",
       },
       {
-        speaker: "Alice Fang",
+        speaker: "Alice Fang (房诗曼)",
         title: "Is Traveling the Best Way to Broaden Our Horizons?",
       },
     ],
