@@ -160,7 +160,7 @@ export default function Home() {
           title="About the Club"
           description="A student-led organization dedicated to discussion, argumentation, public reasoning, and intellectual exchange."
         >
-          <div className="space-y-4 text-sm leading-7 text-black/70">
+          <div className="max-w-3xl space-y-4 text-base leading-7 text-black/70">
             <p>
               The Critical Thinking Club is one of the longest-standing student
               clubs in ZMB history. As a student-led club at Jinling High School ZMB, CTC is
@@ -236,7 +236,7 @@ export default function Home() {
 
         <EditorialSection title="Front Office">
           <div className="space-y-5 text-sm leading-7 text-black/70">
-            <p>
+            <p className="max-w-3xl text-base leading-7">
               Established in 2026, the Front Office serves as a collaborative
               leadership body dedicated to supporting the long-term development,
               continuity, and institutional initiatives of the Critical Thinking

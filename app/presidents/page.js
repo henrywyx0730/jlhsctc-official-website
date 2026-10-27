@@ -284,7 +284,7 @@ function ProfileRow({ person }) {
             {person.education}
           </p>
           {person.bio ? (
-            <p className="mt-4 text-sm leading-7 text-black/70">
+            <p className="mt-4 max-w-3xl text-base leading-7 text-black/70">
               {person.bio}
             </p>
           ) : (
@@ -312,7 +312,7 @@ export default function PresidentsPage() {
         <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
           Presidents
         </h1>
-        <p className="mt-5 max-w-5xl text-base leading-7 text-black/65">
+        <p className="mt-5 max-w-3xl text-base leading-7 text-black/65">
           Profiles are organized by academic year and leadership role, preserving
           each term&apos;s president and co-presidents.
         </p>

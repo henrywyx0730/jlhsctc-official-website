@@ -144,16 +144,6 @@ const speakingPeriods = [
   },
 ];
 
-function HonorDivider({ label, className = "mt-5" }) {
-  return (
-    <div className={className}>
-      <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#765625]">
-        {label}
-      </span>
-    </div>
-  );
-}
-
 function LaurelHalf({ mirrored = false }) {
   return (
     <svg
@@ -179,7 +169,7 @@ function TeamHonor({ result }) {
     <div className="mt-4 flex max-w-sm items-center gap-2 text-[#8f6d36]">
       <span className="h-px w-6 shrink-0 bg-[#b08d57]" aria-hidden="true" />
       <LaurelHalf />
-      <span className="font-serif text-xl font-bold uppercase tracking-[0.04em] text-[#765625] md:text-2xl">
+      <span className="font-serif text-lg font-bold uppercase tracking-[0.04em] text-[#765625] md:text-xl">
         {result}
       </span>
       <LaurelHalf mirrored />
@@ -204,7 +194,7 @@ function AchievementEvent({ event }) {
   return (
     <article className="border-t border-[#d0d7de] pt-10 first:border-t-0 first:pt-0">
       <div className="max-w-3xl">
-        <h4 className="font-serif text-2xl font-semibold tracking-tight text-black/85 md:text-3xl">
+        <h4 className="font-serif text-xl font-semibold tracking-tight text-black/85 md:text-2xl">
           {event.title}
         </h4>
         {event.team && (
@@ -218,7 +208,7 @@ function AchievementEvent({ event }) {
 
       {event.individual.length > 0 && (
         <div className="mt-8">
-          <h5 className="font-serif text-lg font-semibold tracking-tight text-black/75">
+          <h5 className="text-sm font-semibold text-black/70">
             Individual Honors
           </h5>
           <ul className="mt-4 space-y-4 border-l border-[#d0d7de] pl-5 text-sm leading-6">
@@ -243,10 +233,10 @@ function AchievementEvent({ event }) {
 function AchievementYear({ year }) {
   return (
     <section className="border-t border-[#d0d7de] pt-16 first:border-t-0 first:pt-0">
-      <h3 className="font-serif text-3xl font-normal tracking-tight text-black/90 md:text-4xl">
+      <h3 className="font-serif text-2xl font-normal tracking-tight text-black/90 md:text-3xl">
         {year.year}
       </h3>
-      <div className="mt-12 space-y-14">
+      <div className="mt-8 space-y-14">
         {year.events.map((event) => (
           <AchievementEvent key={event.title} event={event} />
         ))}
@@ -268,13 +258,18 @@ function CompetitionAchievements() {
 function SpeakingPeriod({ period }) {
   return (
     <section className="border-t border-[#d0d7de] pt-10 first:border-t-0 first:pt-0">
-      <p className="font-serif text-3xl font-normal tracking-tight text-black/90">{period.year}</p>
-      <h3 className="mt-2 font-display text-2xl font-semibold text-black/80">
-        TEDxYouth@JLHS
-        <span className="sr-only"> {period.year}</span>
+      <h3 className="flex flex-wrap items-baseline gap-x-3">
+        <span className="font-serif text-2xl font-normal tracking-tight text-black/90 md:text-3xl">
+          {period.year}
+        </span>
+        <span className="text-black/40" aria-hidden="true">
+          ·
+        </span>
+        <span className="font-display text-lg font-semibold text-black/80 md:text-xl">
+          TEDxYouth@JLHS
+        </span>
       </h3>
-      <HonorDivider label="Leadership & Speaking" className="mt-5" />
-      <ul className="mt-4 space-y-4 border-l border-[#d0d7de] pl-5 text-sm leading-6">
+      <ul className="mt-5 space-y-4 border-l border-[#d0d7de] pl-5 text-sm leading-6">
         {period.entries.map((entry) => (
           <li
             key={`${period.year}-${entry.person}`}
@@ -303,7 +298,7 @@ export default function AchievementsPage() {
   return (
     <>
       <section className="mx-auto max-w-6xl px-6 py-12">
-        <h1 className="mt-0 font-serif text-5xl font-semibold tracking-tight md:text-7xl">
+        <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight md:text-6xl">
           Achievements
         </h1>
         <p className="mt-5 max-w-3xl text-base leading-7 text-black/65">
@@ -311,13 +306,15 @@ export default function AchievementsPage() {
           leadership contributions associated with the Critical Thinking Club.
         </p>
 
-        <section className="mt-16">
-          <h2 className="font-serif text-3xl font-semibold">Competition History</h2>
+        <section className="mt-12">
+          <h2 className="font-serif text-3xl font-semibold tracking-tight md:text-4xl">
+            Competition History
+          </h2>
           <CompetitionAchievements />
         </section>
 
-        <section className="mt-16">
-          <h2 className="font-display text-3xl font-semibold">
+        <section className="mt-20 border-t border-[#d0d7de] pt-16">
+          <h2 className="font-serif text-3xl font-semibold tracking-tight md:text-4xl">
             Public Speaking &amp; Leadership
           </h2>
           <SpeakingAchievements />
