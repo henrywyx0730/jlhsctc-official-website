@@ -2,7 +2,7 @@ import LaurelHalf from "../components/HonorLaurel";
 import { createPageMetadata } from "../lib/metadata";
 
 const description =
-  "A record of achievements, competition results, public speaking, and leadership contributions associated with the Critical Thinking Club.";
+  "A record of competition achievements and TEDx organizational contributions associated with the Critical Thinking Club.";
 
 export const metadata = createPageMetadata({
   title: "Achievements",
@@ -108,7 +108,6 @@ const speakingPeriods = [
     entries: [
       { person: "Michelle Wei (魏明萱)", contribution: "Event Manager" },
       { person: "Ivanna Hua (华艺雯)", contribution: "Organizer" },
-      { person: "George Tian (天湙)", contribution: "Speaker" },
     ],
   },
   {
@@ -116,7 +115,7 @@ const speakingPeriods = [
     entries: [
       { person: "Leah Zhuang (庄子慧)", contribution: "Event Manager; Curator" },
       { person: "Michelle Luan (栾雨诺)", contribution: "Organizer" },
-      { person: "Lucy Liu (刘美忱)", contribution: "Speaker" },
+      { person: "Jack Shen (申秋宇)", contribution: "Multimedia Lead" },
     ],
   },
   {
@@ -130,17 +129,22 @@ const speakingPeriods = [
         person: "Henry Wu (吴昱贤)",
         contribution: "Organizer; Curator (2024–2025)",
       },
-      { person: "Leah Zhuang (庄子慧)", contribution: "Speaker" },
-      { person: "Michelle Luan (栾雨诺)", contribution: "Speaker" },
-      { person: "Lucy Liu (刘美忱)", contribution: "Speaker" },
+      {
+        person: "Sean Shen (申晓旻)",
+        contribution: "Organizer; Multimedia Lead",
+      },
     ],
   },
   {
     year: "2023",
     entries: [
-      { person: "Henry Wu (吴昱贤)", contribution: "Speaker" },
-      { person: "Lucy Liu (刘美忱)", contribution: "Host" },
-      { person: "Coco Hu (胡可萱)", contribution: "Speaker" },
+      {
+        person: "Jack Lyu (吕嘉涵)",
+        contribution: "Founder; Event Manager",
+      },
+      { person: "Aurora Ma (马苏阳)", contribution: "Organizer" },
+      { person: "Krystal Liu (刘熹微)", contribution: "Organizer" },
+      { person: "Sean Shen (申晓旻)", contribution: "Multimedia Lead" },
     ],
   },
 ];
@@ -286,8 +290,7 @@ export default function AchievementsPage() {
           Achievements
         </h1>
         <p className="mt-5 max-w-3xl text-base leading-7 text-black/65">
-          A record of achievements, competition results, public speaking, and
-          leadership contributions associated with the Critical Thinking Club.
+          A record of competition achievements and TEDx organizational contributions associated with the Critical Thinking Club.
         </p>
 
         <section className="mt-12">
@@ -299,7 +302,7 @@ export default function AchievementsPage() {
 
         <section className="mt-20 border-t border-[#d0d7de] pt-16">
           <h2 className="font-serif text-3xl font-semibold tracking-tight md:text-4xl">
-            Public Speaking &amp; Leadership
+            TEDx Leadership &amp; Contributions
           </h2>
           <SpeakingAchievements />
         </section>
