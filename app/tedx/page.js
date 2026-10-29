@@ -202,8 +202,7 @@ export default function TedxPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-12 md:py-16">
         <section className="mt-12 max-w-3xl border-t border-[#d0d7de] pt-6">
-          <SectionLabel>Official Links</SectionLabel>
-          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-3 text-sm leading-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm leading-6">
             <ArchiveLink
               label="TEDx Event Page"
               href="https://www.ted.com/tedx/events/67468"
@@ -212,8 +211,7 @@ export default function TedxPage() {
         </section>
 
         <section className="mt-20 max-w-3xl">
-          <SectionLabel>About</SectionLabel>
-          <h2 className="mt-3 font-display text-3xl font-semibold">
+          <h2 className="font-display text-3xl font-semibold text-tedx-ink">
             About TEDxYouth@JLHS
           </h2>
           <p className="mt-5 text-base leading-7 text-black/65">
@@ -224,8 +222,7 @@ export default function TedxPage() {
         </section>
 
         <section className="mt-20">
-          <SectionLabel>Program History</SectionLabel>
-          <h2 className="mt-3 font-display text-3xl font-semibold">
+          <h2 className="font-display text-3xl font-semibold text-tedx-ink">
             Events Archive
           </h2>
           <div className="mt-9 max-w-4xl">
@@ -236,8 +233,7 @@ export default function TedxPage() {
         </section>
 
         <section className="mt-20 max-w-4xl">
-          <SectionLabel>People &amp; Practice</SectionLabel>
-          <h2 className="mt-3 font-display text-3xl font-semibold">
+          <h2 className="font-display text-3xl font-semibold text-tedx-ink">
             Leadership &amp; Contributions
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-black/65">
