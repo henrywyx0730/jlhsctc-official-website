@@ -191,26 +191,15 @@ export default function TedxPage() {
             A student-led TEDx platform dedicated to sharing ideas, stories, and
             perspectives.
           </p>
-          <p className="mt-8 text-xs font-medium text-tedx-red">
-            Organization History
-          </p>
-          <p className="mt-2 text-sm text-white/60">
+          <p className="mt-8 text-sm text-white/60">
             Founded in 2023 by Jack Lyu (吕嘉涵)
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-12 md:py-16">
-        <section className="mt-12 max-w-3xl border-t border-[#d0d7de] pt-6">
-          <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm leading-6">
-            <ArchiveLink
-              label="TEDx Event Page"
-              href="https://www.ted.com/tedx/events/67468"
-            />
-          </div>
-        </section>
 
-        <section className="mt-20 max-w-3xl">
+        <section className="max-w-3xl">
           <h2 className="font-display text-3xl font-semibold text-tedx-ink">
             About TEDxYouth@JLHS
           </h2>
@@ -245,6 +234,12 @@ export default function TedxPage() {
             {leadershipYears.map((entry) => (
               <LeadershipYear key={entry.year} entry={entry} />
             ))}
+          </div>
+          <div className="mt-16 max-w-4xl border-t border-[#d0d7de] pt-6 text-sm leading-6">
+            <ArchiveLink
+              label="TEDx Event Page"
+              href="https://www.ted.com/tedx/events/67468"
+            />
           </div>
         </section>
       </section>
