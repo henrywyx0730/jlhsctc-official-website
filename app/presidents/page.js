@@ -240,7 +240,7 @@ function AchievementList({ achievements }) {
   );
 }
 
-function ProfileRow({ person }) {
+function ProfileRow({ person, isCurrentTerm }) {
   return (
     <article className="border-t border-[#d0d7de] p-5">
       <div className="grid gap-5 md:grid-cols-[180px_1fr]">
@@ -289,7 +289,7 @@ function ProfileRow({ person }) {
             </p>
           ) : (
             <p className="mt-4 text-sm leading-7 text-black/55">
-              Biography pending.
+              {isCurrentTerm ? "Current President" : "Biography pending."}
             </p>
           )}
 
@@ -346,7 +346,11 @@ export default function PresidentsPage() {
                 </div>
 
                 {term.members.map((person) => (
-                  <ProfileRow key={person.name} person={person} />
+                  <ProfileRow
+                     key={person.name}
+                     person={person}
+                     isCurrentTerm={term.year === presidentTerms[0].year}
+                   />
                 ))}
               </section>
             ))}
